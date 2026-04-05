@@ -1,0 +1,8 @@
+<svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Shield Background -->
+  <path d="M16 2L4 7V16C4 23 16 30 16 30C16 30 28 23 28 16V7L16 2Z" fill="#0f172a" />
+  <!-- Medical Cross / Compass Element -->
+  <path d="M16 8L18 14H22L19 16L20 20L16 18L12 20L13 16L10 14H14L16 8Z" fill="#2dd4bf" />
+  <rect x="14.5" y="13" width="3" height="10" rx="1.5" fill="white" />
+  <rect x="11" y="16.5" width="10" height="3" rx="1.5" fill="white" />
+</svg>

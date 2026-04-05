@@ -1,0 +1,197 @@
+import { ModuleDefinition } from "@/types/assessment";
+
+export const burnoutModule: ModuleDefinition = {
+  id: "burnout",
+  titleEn: "Work Stress & Burnout Warning Signs",
+  titleDe: "Warnsignale für Arbeitsstress & Burnout",
+  titleTr: "İş Stresi & Tükenmişlik Uyarı İşaretleri",
+  titleRu: "Рабочий стресс и признаки выгорания",
+  titlePl: "Oznaki Stresu i Wypalenia Zawodowego",
+  titleUk: "Робочий стрес та ознаки вигорання",
+  titleRo: "Semne de Avertizare pentru Stres și Epuizare (Burnout)",
+  titleAr: "مؤشرات الإجهاد المهني والاحتراق النفسي",
+  descriptionEn: "A supportive screening for signs of emotional exhaustion, cynicism, and reduced performance related to long-term work stress.",
+  descriptionDe: "Ein unterstützendes Screening auf Anzeichen von emotionaler Erschöpfung, Zynismus und verminderter Leistung im Zusammenhang mit langfristigem Arbeitsstress.",
+  descriptionTr: "Uzun süreli iş stresiyle ilişkili duygusal tükenme, sinizm ve azalmış performans belirtileri için destekleyici bir tarama.",
+  descriptionRu: "Поддерживающий скрининг на наличие признаков эмоционального истощения и снижения эффективности, связанных с длительным рабочим стрессом.",
+  descriptionPl: "Wspierające badanie pod kątem oznak wyczerpania emocjonalnego, cynizmu i obniżonej wydajności związanych z długotrwałym stresem zawodowym.",
+  descriptionUk: "Підтримувальний скринінг на наявність ознак емоційного виснаження та зниження ефективності, пов'язаних із тривалим робочим стресом.",
+  descriptionRo: "O evaluare de susținere pentru semnele de epuizare emoțională, cinism și performanță redusă legate de stresul profesional pe termen lung.",
+  descriptionAr: "فحص داعم لعلامات الاستنزاف العاطفي، والتشاؤم، وتراجع الأداء المرتبط بضغط العمل طويل الأمد.",
+  disclaimerEn: "This assessment is an orientation aid and does not replace a medical diagnosis. If you feel burdened or if signs persist, please consult a specialist doctor or therapist.",
+  disclaimerDe: "Diese Einschätzung ist eine Orientierungshilfe und ersetzt keine ärztliche Diagnose. Wenn Sie sich belastet fühlen oder Anzeichen fortbestehen, suchen Sie bitte einen Facharzt oder Therapeuten auf.",
+  disclaimerTr: "Bu değerlendirme bir oryantasyon yardımıdır ve tıbbi teşhisin yerini almaz. Kendinizi yük altında hissediyorsanız veya belirtiler devam ediyorsa, lütfen bir uzman doktora veya terapiste danışın.",
+  disclaimerRu: "Эта оценка является ориентировочной и не заменяет медицинский диагноз. Если вы чувствуете нагрузку или признаки сохраняются, обратитесь к врачу-специалисту или терапевту.",
+  disclaimerPl: "Ta ocena jest pomocą orientacyjną i nie zastępuje diagnozy medycznej. Jeśli czujesz się obciążony lub objawy się utrzymują, skonsultuj się z lekarzem specjalistą lub terapeutą.",
+  disclaimerUk: "Ця оцінка є орієнтиром і не замінює медичний діагноз. Якщо ви відчуваєте навантаження або ознаки тривають, зверніться до лікаря-спеціаліста або терапевта.",
+  disclaimerRo: "Această evaluare este un ajutor de orientare și nu înlocuiește un diagnostic medical. Dacă vă simțiți împovărat sau dacă semnele persistă, consultați un medic specialist sau un terapeut.",
+  disclaimerAr: "هذا التقييم هو أداة توجيهية ولا يغني عن التشخيص الطبي. إذا كنت تشعر بالعبء أو إذا استمرت هذه العلامات، يرجى استشارة طبيب مختص أو معالج نفسي.",
+  thresholds: {
+    elevated: 35,
+    high: 65,
+  },
+  questions: [
+    {
+      id: "emotional_exhaustion",
+      textEn: "How often do you feel emotionally drained by your work?",
+      textDe: "Wie oft fühlen Sie sich durch Ihre Arbeit emotional erschöpft?",
+      textTr: "İşinizden dolayı ne sıklıkla duygusal olarak tükenmiş hissediyorsunuz?",
+      textRu: "Как часто вы чувствуете себя эмоционально истощенным из-за работы?",
+      textPl: "Jak często czujesz się emocjonalnie wyczerpany swoją pracą?",
+      textUk: "Як часто ви почуваєтеся емоційно виснаженим через свою роботу?",
+      textRo: "Cât de des vă simțiți epuizat emoțional de munca dumneavoastră?",
+      textAr: "كم مرة تشعر بالاستنزاف العاطفي بسبب عملك؟",
+      options: [
+        { id: "rarely", labelEn: "Rarely or never", labelDe: "Selten oder nie", labelTr: "Nadiren veya hiç", labelRu: "Редко или никогда", labelPl: "Rzadko lub nigdy", labelUk: "Рідко або ніколи", labelRo: "Rareori sau niciodată", labelAr: "نادراً أو أبداً", points: 0 },
+        { id: "sometimes", labelEn: "A few times a month", labelDe: "Ein paar Mal im Monat", labelTr: "Ayda birkaç kez", labelRu: "Несколько раз в месяц", labelPl: "Kilka razy w miesiącu", labelUk: "Кілька разів на місяць", labelRo: "De câteva ori pe lună", labelAr: "بضع مرات في الشهر", points: 10 },
+        { id: "often", labelEn: "Multiple times a week", labelDe: "Mehrmals pro Woche", labelTr: "Haftada birkaç kez", labelRu: "Несколько раз в неделю", labelPl: "Kilka razy w tygodniu", labelUk: "Кілька разів на тиждень", labelRo: "De mai multe ori pe săptămână", labelAr: "عدة مرات في الأسبوع", points: 20 },
+      ]
+    },
+    {
+      id: "depersonalization",
+      textEn: "Do you find yourself becoming more cynical or detached toward your colleagues or clients?",
+      textDe: "Werden Sie gegenüber Ihren Kollegen oder Kunden zynischer oder distanzierter?",
+      textTr: "Meslektaşlarınıza veya müşterilerinize karşı daha alaycı veya mesafeli olduğunuzu fark ediyor musunuz?",
+      textRu: "Замечаете ли вы, что становитесь более циничным или отстраненным по отношению к коллегам или клиентам?",
+      textPl: "Czy zauważasz u siebie większy cynizm lub dystans w stosunku do współpracowników lub klientów?",
+      textUk: "Чи стаєте ви більш цинічним або відстороненим до своїх колег або клієнтів?",
+      textRo: "Vă surprindeți devenind mai cinic sau mai detașat față de colegi sau clienți?",
+      textAr: "هل تجد نفسك تصبح أكثر تشاؤماً أو انفصالاً تجاه زملائك أو عملائك؟",
+      options: [
+        { id: "no", labelEn: "No, I feel connected and empathetic", labelDe: "Nein, ich fühle mich verbunden und empathisch", labelTr: "Hayır, bağlı ve empatik hissediyorum", labelRu: "Нет, я чувствую связь и сопереживание", labelPl: "Nie, czuję więź i empatię", labelUk: "Ні, я відчуваю зв'язок та емпатію", labelRo: "Nu, mă simt conectat și empatic", labelAr: "لا، أشعر بالتواصل والتعاطف", points: 0 },
+        { id: "somewhat", labelEn: "Occasionally, more than I used to", labelDe: "Gelegentlich، mehr als früher", labelTr: "Bazen, eskisinden daha fazla", labelRu: "Иногда, больше чем раньше", labelPl: "Okazjonalnie, częściej niż kiedyś", labelUk: "Іноді, частіше ніж раніше", labelRo: "Ocazional, mai mult decât înainte", labelAr: "أحياناً، أكثر من المعتاد", points: 10 },
+        { id: "frequently", labelEn: "Yes, I often feel disconnected", labelDe: "Ja، ich fühle mich oft distanziert", labelTr: "Evet, genellikle kopuk hissediyorum", labelRu: "Да, я часто чувствую отстраненность", labelPl: "Tak, często czuję się odizolowany", labelUk: "Так, я часто відчуваю відстороненість", labelRo: "Da, mă simt adesea deconectat", labelAr: "نعم، غالباً ما أشعر بالانفصال", points: 20 },
+      ]
+    },
+    {
+      id: "accomplishment",
+      textEn: "Do you feel that you are achieving less at work than you used to?",
+      textDe: "Haben Sie das Gefühl، dass Sie bei der Arbeit weniger erreichen als früher?",
+      textTr: "İş yerinde eskisinden daha az şey başardığınızı hissediyor musunuz?",
+      textRu: "Чувствуете ли вы, что добиваетесь меньших результатов на работе, чем раньше?",
+      textPl: "Czy masz poczucie, że osiągasz w pracy mniej niż kiedyś?",
+      textUk: "Чи відчуваєте ви, що досягаєте на роботі менших результатів, ніж раніше?",
+      textRo: "Simțiți că realizați mai puțin la locul de muncă decât înainte?",
+      textAr: "هل تشعر أنك تحقق نتائج في العمل أقل مما كنت تحققه سابقاً؟",
+      options: [
+        { id: "no", labelEn: "No, I still feel productive", labelDe: "Nein، ich fühle mich weiterhin produktiv", labelTr: "Hayır, hala üretken hissediyorum", labelRu: "Нет, я все еще продуктивен", labelPl: "Nie, nadal czuję się produktywny", labelUk: "Ні, я все ще почуваюся продуктивним", labelRo: "Nu, încă mă simt productiv", labelAr: "لا، لا زلت أشعر بالإنتاجية", points: 0 },
+        { id: "sometimes", labelEn: "Sometimes I struggle with my performance", labelDe: "Manchmal habe ich Schwierigkeiten mit meiner Leistung", labelTr: "Bazen performansımla ilgili sorunlar yaşıyorum", labelRu: "Иногда мне трудно сохранять эффективность", labelPl: "Czasami mam trudności z wydajnością", labelUk: "Іноді мені важко зберігати ефективність", labelRo: "Uneori am dificultăți cu performanța mea", labelAr: "أحياناً أواجه صعوبات في أدائي", points: 10 },
+        { id: "often", labelEn: "Yes, I feel unproductive most days", labelDe: "Ja، ich fühle mich an den meisten Tagen unproduktiv", labelTr: "Evet, çoğu gün verimsiz hissediyorum", labelRu: "Да, я чувствую себя непродуктивным", labelPl: "Tak, czuję się nieproduktywny przez większość dni", labelUk: "Так, я почуваюся непродуктивним", labelRo: "Da, mă simt neproductiv în majoritatea zilelor", labelAr: "نعم، أشعر بعدم الإنتاجية في معظم الأيام", points: 15 },
+      ]
+    },
+    {
+      id: "physical_symptoms",
+      textEn: "Do you experience physical symptoms like headaches or sleep issues related to work stress?",
+      textDe: "Haben Sie körperliche Symptome wie Kopfschmerzen oder Schlafstörungen im Zusammenhang mit Arbeitsstress?",
+      textTr: "İş stresine bağlı baş ağrısı veya uyku sorunları gibi fiziksel belirtiler yaşıyor musunuz?",
+      textRu: "Испытываете ли вы физические симптомы, такие как головные боли или проблемы со сном, связанные с рабочим стрессом?",
+      textPl: "Czy doświadczasz objawów fizycznych, takich jak bóle głowy lub problemy ze snem, związanych ze stresem w pracy?",
+      textUk: "Чи відчуваєте ви фізичні симптоми, такі як головний біль або проблеми зі сном, пов'язані з робочим стресом?",
+      textRo: "Aveți simptome fizice, cum ar fi dureri de cap sau probleme cu somnul, legate de stresul de la muncă?",
+      textAr: "هل تعاني من أعراض جسدية مثل الصداع أو مشاكل في النوم مرتبطة بضغط العمل؟",
+      options: [
+        { id: "rarely", labelEn: "Rarely or never", labelDe: "Selten oder nie", labelTr: "Nadiren veya hiç", labelRu: "Редко или никогда", labelPl: "Rzadko lub nigdy", labelUk: "Рідко або ніколи", labelRo: "Rareori sau niciodată", labelAr: "نادراً أو أبداً", points: 0 },
+        { id: "occasionally", labelEn: "Occasionally", labelDe: "Gelegentlich", labelTr: "Ara sıra", labelRu: "Иногда", labelPl: "Okazjonalnie", labelUk: "Іноді", labelRo: "Ocazional", labelAr: "أحياناً", points: 10 },
+        { id: "frequently", labelEn: "Yes, very frequently", labelDe: "Ja، sehr häufig", labelTr: "Evet, çok sık", labelRu: "Да, очень часто", labelPl: "Tak, bardzo często", labelUk: "Так, дуже часто", labelRo: "Da, foarte frecvent", labelAr: "نعم، بشكل متكرر جداً", points: 20 },
+      ]
+    }
+  ],
+  explanations: {
+    lowEn: "Your responses suggest you are currently managing work stress well. Maintaining boundaries and self-care is key.",
+    lowDe: "Ihre Antworten deuten darauf hin، dass Sie den Arbeitsstress aktuell gut bewältigen. Das Wahren von Grenzen und Selbstfürsorge sind entscheidend.",
+    lowTr: "Cevaplarınız şu anda iş stresini iyi yönettiğinizi gösteriyor. Sınırları korumak ve öz bakım anahtar kelimelerdir.",
+    lowRu: "Ваши ответы говорят о том, что вы справляетесь с рабочим стрессом. Сохранение баланса между работой и личной жизнью важно для профилактики истощения.",
+    lowPl: "Twoje odpowiedzi sugerują, że obecnie dobrze radzisz sobie ze stresem w pracy. Kluczem jest zachowanie granic i dbanie o siebie.",
+    lowUk: "Ваші відповіді вказують на те, що ви добре справляєтеся з робочим стресом. Збереження балансу між роботою та відпочинком дуже важливе.",
+    lowRo: "Răspunsurile dumneavoastră sugerează că gestionați bine stresul de la locul de muncă în prezent. Menținerea limitelor și îngrijirea de sine sunt esențiale.",
+    lowAr: "تشير إجاباتك إلى أنك تدير ضغوط العمل بشكل جيد في الوقت الحالي. الحفاظ على الحدود والرعاية الذاتية هو المفتاح.",
+    elevatedEn: "You are showing some signs of sustained work strain. It might be helpful to review your workload and prioritize recovery periods.",
+    elevatedDe: "Sie zeigen einige Anzeichen von anhaltender Arbeitsbelastung. Es könnte hilfreich sein، Ihr Arbeitspensum zu überprüfen und Erholungsphasen zu priorisieren.",
+    elevatedTr: "Sürekli iş yüküyle ilgili bazı belirtiler gösteriyorsunuz. İş yükünüzü gözden geçirmek ve dinlenme sürelerine öncelik vermek faydalı olabilir.",
+    elevatedRu: "Вы проявляете некоторые признаки длительного рабочего напряжения. Рекомендуем пересмотреть нагрузку и уделить внимание полноценному отдыху.",
+    elevatedPl: "Wykazujesz pewne oznaki trwałego obciążenia pracą. Pomocne może być przyjrzenie się obciążeniu zadaniami i priorytetowe traktowanie odpoczynku.",
+    elevatedUk: "Ви показуєте деякі ознаки тривалого робочого навантаження. Корисно буде переглянути свій графік та приділити увагу відпочинку.",
+    elevatedRo: "Prezentați unele semne de tensiune prelungită la locul de muncă. Ar putea fi util să vă revizuiți volumul de muncă și să acordați prioritate perioadelor de recuperare.",
+    elevatedAr: "تظهر عليك بعض علامات ضغط العمل المستمر. قد يكون من المفيد مراجعة عبء العمل لديك وإعطاء الأولوية لفترات الراحة.",
+    highEn: "Your results indicate a high level of work-related exhaustion. We strongly recommend speaking with a counselor or medical professional regarding burnout prevention.",
+    highDe: "Ihre Ergebnisse deuten auf ein hohes Maß an arbeitsbedingter Erschöpfung hin. Wir empfehlen dringend، mit einem Berater oder Mediziner über Burnout-Prävention zu sprechen.",
+    highTr: "Sonuçlarınız işe bağlı yüksek düzeyde tükenmişlik gösteriyor. Tükenmişliği önleme konusunda bir danışman veya tıp uzmanıyla konuşmanızı şiddetle öneririz.",
+    highRu: "Ваши показатели указывают на высокий уровень рабочего истощения. Мы настоятельно рекомендуем обратиться к специалисту для предотвращения выгорания.",
+    highPl: "Twoje wyniki wskazują na wysoki poziom wyczerpania związanego z pracą. Silnie zalecamy rozmowę z doradcą lub lekarzem na temat profilaktyki wypalenia zawodowego.",
+    highUk: "Ваші показники вказують на високий рівень робочого виснаження. Наполегливо радимо звернутися до фахівця для запобігання вигоранню.",
+    highRo: "Rezultatele dumneavoastră indică un nivel ridicat de epuizare legată de muncă. Vă recomandăm cu tărie să discutați cu un consilier sau cu un medic specialist despre prevenirea burnout-ului.",
+    highAr: "تشير نتائجك إلى مستوى عالٍ من الإرهاق المرتبط بالعمل. نوصي بشدة بالتحدث مع مستشار أو مختص طبي فيما يتعلق بالوقاية من الاحتراق النفسي."
+  },
+  recommendationsEn: [
+    "Identify specific work tasks that drain you and discuss adjustments with your supervisor.",
+    "Schedule short, recurring breaks during the workday to disconnect mentally.",
+    "Practice strict 'off-work' boundaries, such as not checking emails after hours.",
+    "Prioritize quality sleep and physical activity to recover from daily strain.",
+    "Seek social support by talking about your stress with trusted friends or close family.",
+    "Engage in hobbies or activities that are completely unrelated to your professional life.",
+    "If distress persists, consider professional guidance from a psychologist or coach."
+  ],
+  recommendationsDe: [
+    "Identifizieren Sie spezifische Aufgaben، die Sie belasten، und besprechen Sie Anpassungen mit Ihrem Vorgesetzten.",
+    "Planen Sie kurze, wiederkehrende Pausen während des Arbeitstages ein, um mental abzuschalten.",
+    "Wahren Sie strikte Feierabend-Grenzen, z. B. keine E-Mails nach der Arbeitszeit.",
+    "Priorisieren Sie guten Schlaf und Bewegung، um sich von der täglichen Belastung zu erholen.",
+    "Suchen Sie soziale Unterstützung، indem Sie mit vertrauten Freunden oder der Familie über Ihren Stress sprechen.",
+    "Gehen Sie Hobbys oder Aktivitäten nach، die absolut nichts mit Ihrem Berufsleben zu tun haben.",
+    "Wenn die Belastung anhält، ziehen Sie professionelle Unterstützung durch einen Psychologen oder Coach in Erwägung."
+  ],
+  recommendationsTr: [
+    "Sizi tüketen spesifik iş görevlerini belirleyin ve yöneticinizle düzenlemeler hakkında görüşün.",
+    "Zihinsel olarak kopmak için iş günü boyunca kısa, tekrarlayan molalar planlayın.",
+    "Mesai saatlerinden sonra e-postaları kontrol etmemek gibi katı 'iş dışı' sınırları uygulayın.",
+    "Günlük yorgunluğu atmak için kaliteli uykuya ve fiziksel aktiviteye öncelik verin.",
+    "Stresiniz hakkında güvenilir arkadaşlarınızla veya ailenizle konuşarak sosyal destek alın.",
+    "Profesyonel hayatınızla tamamen ilgisiz olan hobilere veya aktivitelere zaman ayırın.",
+    "Sıkıntı devam ederse، bir psikolog veya koçtan profesyonel rehberlik almayı düşünün."
+  ],
+  recommendationsRu: [
+    "Определите задачи, которые больше всего истощают вас, и обсудите нагрузку с руководством.",
+    "Планируйте короткие регулярные перерывы в течение дня для ментальной перезагрузки.",
+    "Соблюдайте строгие границы: не проверяйте почту и мессенджеры после окончания рабочего дня.",
+    "Уделяйте внимание качественному сну и активности для восстановления сил.",
+    "Ищите поддержку, обсуждая свой стресс с близкими людьми или друзьями.",
+    "Занимайтесь хобби, которые никак не связаны с вашей профессиональной деятельностью.",
+    "Если состояние не улучшается, обратитесь за профессиональной помощью к психологу или коучу."
+  ],
+  recommendationsPl: [
+    "Zidentyfikuj zadania w pracy, które najbardziej Cię obciążają i omów ewentualne zmiany z przełożonym.",
+    "Planuj krótkie, regularne przerwy w ciągu dnia pracy na reset mentalny.",
+    "Ustalaj twarde granice po pracy, np. nie sprawdzaj e-maili w czasie prywatnym.",
+    "Dbaj o jakość snu i aktywność fizyczną, aby zregenerować się po codziennym wysiłku.",
+    "Szukaj wsparcia społecznego, rozmawiając o stresie z bliskimi znajomymi lub rodziną.",
+    "Angażuj się w hobby lub aktywności, które nie mają żadenego związku z Twoim życiem zawodowym.",
+    "Jeśli stres się utrzymuje, rozważ pomoc psychologiczną u terapeuty lub coacha."
+  ],
+  recommendationsUk: [
+    "Визначте завдання, які найбільше виснажують вас, та обговоріть графік із керівництвом.",
+    "Плануйте короткі регулярні перерви протягом дня для відпочинку.",
+    "Дотримуйтеся меж між роботою та життям: не перевіряйте пошту після роботи.",
+    "Приділяйте увагу якісному сну та спорту для відновлення сил.",
+    "Шукайте підтримку, обговорюючи свій стрес із близьми людьми або друзями.",
+    "Займайтеся хобі, які зовсім не пов'язані з вашою професійною діяльністю.",
+    "Якщо стрес не минає, зверніться за допомогою до психолога або коуча."
+  ],
+  recommendationsRo: [
+    "Identificați sarcinile specifice de lucru care vă epuizează și discutați ajustările cu supraveghetorul.",
+    "Programați pauze scurte și recurente în timpul zilei de lucru pentru a vă deconecta mental.",
+    "Practicați limite stricte de tip 'după program', cum ar fi să nu verificați e-mailurile după orele de lucru.",
+    "Prioritizați somnul de calitate și activitatea fizică pentru a vă recupera după tensiunea zilnică.",
+    "Căutați sprijin social vorbind despre stresul dumneavoastră cu prieteni de încredere sau familia apropiată.",
+    "Implicați-vă în hobby-uri sau activități care nu au nicio legătură cu viața dumneavoastră profesională.",
+    "Dacă suferința persistă, luați în considerare îndrumarea profesională din partea unui psiholog sau coach."
+  ],
+  recommendationsAr: [
+    "حدد مهام العمل المحددة التي تستنزفك وناقش التعديلات مع مسؤولك.",
+    "خطط لفترات راحة قصيرة ومتكررة خلال يوم العمل لفك الارتباط ذهنياً.",
+    "مارس حدوداً صارمة لما بعد العمل، مثل عدم التحقق من رسائل البريد الإلكتروني بعد ساعات العمل.",
+    "أعطِ الأولوية للنوم الجيد والنشاط البدني للتعافي من الإجهاد اليومي.",
+    "ابحث عن الدعم الاجتماعي من خلال التحدث عن ضغوطك مع أصدقاء موثوق بهم أو العائلة المقربة.",
+    "انخرط في هوايات أو أنشطة غير مرتبطة تماماً بحياتك المهنية.",
+    "إذا استمر الضيق، ففكر في الحصول على توجيه تخصصي من إخصائي نفسي أو مدرب."
+  ]
+};

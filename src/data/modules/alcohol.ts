@@ -1,0 +1,195 @@
+import { ModuleDefinition } from "@/types/assessment";
+
+export const alcoholModule: ModuleDefinition = {
+  id: "alcohol",
+  titleEn: "Alcohol Risk & Warning Signs",
+  titleDe: "Alkoholrisiko & Warnsignale",
+  titleTr: "Alkol Riski ve Uyarı İşaretleri",
+  titleRu: "Риск употребления алкоголя и признаки зависимости",
+  titlePl: "Ryzyko Alkoholowe i Oznaki Ostrzegawcze",
+  titleUk: "Ризики вживання алкоголю та ознаки залежності",
+  titleRo: "Riscul de Consum al Alcoolului și Semnele de Avertizare",
+  titleAr: "مخاطر استهلاك الكحول ومؤشرات التحذير",
+  descriptionEn: "A supportive, non-stigmatising screening for hazardous alcohol use and potential harmful drinking patterns.",
+  descriptionDe: "Ein unterstützendes, nicht stigmatisierendes Screening auf riskanten Alkoholkonsum und potenziell schädliche Trinkmuster.",
+  descriptionTr: "Tehlikeli alkol kullanımı ve potansiyel zararlı içme alışkanlıkları için destekleyici, damgalamayan bir tarama.",
+  descriptionRu: "Поддерживающий скрининг на наличие опасного употребления алкоголя и потенциально вредных привычек.",
+  descriptionPl: "Wspierające, niepowodujące stygmatyzacji badanie pod kątem ryzykownego spożywania alkoholu.",
+  descriptionUk: "Підтримувальний скринінг на наявність небезпечного вживання алкоголю та шкідливих звичок.",
+  descriptionRo: "O evaluare de susținere pentru consumul periculos de alcool și potențialele modele dăunătoare de consum.",
+  descriptionAr: "فحص داعم وغير وصمي لأنماط استهلاك الكحول الخطرة والأنماط المحتملة للشرب الضار.",
+  disclaimerEn: "This assessment is an orientation aid and does not replace a medical diagnosis. If you feel burdened or if signs persist, please consult a specialist doctor or therapist.",
+  disclaimerDe: "Diese Einschätzung ist eine Orientierungshilfe und ersetzt keine ärztliche Diagnose. Wenn Sie sich belastet fühlen oder Anzeichen fortbestehen, suchen Sie bitte einen Facharzt oder Therapeuten auf.",
+  disclaimerTr: "Bu değerlendirme bir oryantasyon yardımıdır ve tıbbi teşhisin yerini almaz. Kendinizi yük altında hissediyorsanız veya belirtiler devam ediyorsa, lütfen bir uzman doktora veya terapiste danışın.",
+  disclaimerRu: "Эта оценка является ориентировочной и не заменяет медицинский диагноз. Если вы чувствуете нагрузку или признаки сохраняются, обратитесь к врачу-специалисту или терапевту.",
+  disclaimerPl: "Ta ocena jest pomocą orientacyjną i nie zastępuje diagnozy medycznej. Jeśli czujesz się obciążony lub objawy się utrzymują, skonsultuj się z lekarzem specjalistą lub terapeutą.",
+  disclaimerUk: "Ця оцінка є орієнтиром і не замінює медичний діагноз. Якщо ви відчуваєте навантаження або ознаки тривають, зверніться до лікаря-спеціаліста або терапевта.",
+  disclaimerRo: "Această evaluare este un ajutor de orientare și nu înlocuiește un diagnostic medical. Dacă vă simțiți împovărat sau dacă semnele persistă, consultați un medic specialist sau un terapeut.",
+  disclaimerAr: "هذا التقييم هو أداة توجيهية ولا يغني عن التشخيص الطبي. إذا كنت تشعر بالعبء أو إذا استمرت هذه العلامات، يرجى استشارة طبيب مختص أو معالج نفسي.",
+  thresholds: {
+    elevated: 30,
+    high: 60,
+  },
+  questions: [
+    {
+      id: "frequency",
+      textEn: "How often do you have a drink containing alcohol?",
+      textDe: "Wie oft trinken Sie alkoholische Getränke?",
+      textTr: "Ne sıklıkla alkollü içecek tüketirsiniz?",
+      textRu: "Как часто вы употребляете напитки, содержащие алкоголь?",
+      textPl: "Jak często pijesz napoje zawierające alkohol?",
+      textUk: "Як часто ви вживаєте алкогольні напої?",
+      textRo: "Cât de des consumați băuturi alcoolice?",
+      textAr: "كم مرة تتناول مشروبات تحتوي على الكحول؟",
+      options: [
+        { id: "never", labelEn: "Never or rarely", labelDe: "Nie oder selten", labelTr: "Asla veya nadiren", labelRu: "Никогда или редко", labelPl: "Nigdy lub rzadko", labelUk: "Ніколи або рідко", labelRo: "Niciodată sau rareori", labelAr: "نادراً أو أبداً", points: 0 },
+        { id: "weekly", labelEn: "1-4 times a week", labelDe: "1-4 Mal pro Woche", labelTr: "Haftada 1-4 kez", labelRu: "1-4 раза в неделю", labelPl: "1-4 razy w tygodniu", labelUk: "1-4 рази на тиждень", labelRo: "De 1-4 ori pe săptămână", labelAr: "من 1 إلى 4 مرات في الأسبوع", points: 15 },
+        { id: "daily", labelEn: "4 or more times a week", labelDe: "4 oder mehr Mal pro Woche", labelTr: "Haftada 4 veya daha fazla kez", labelRu: "4 или более раз в неделю", labelPl: "4 lub więcej razy w tygodniu", labelUk: "4 або більше разів на тиждень", labelRo: "De 4 sau mai multe ori pe săptămână", labelAr: "4 مرات أو أكثر في الأسبوع", points: 30 },
+      ]
+    },
+    {
+      id: "quantity_per_day",
+      textEn: "On a typical day when you are drinking, how many drinks containing alcohol do you have?",
+      textDe: "Wie viele alkoholische Getränke trinken Sie an einem typischen Tag, an dem Sie Alkohol konsumieren?",
+      textTr: "Alkollü içecek tükettiğiniz tipik bir günde kaç kadeh alkol alırsınız?",
+      textRu: "Сколько алкогольных напитков вы выпиваете в обычный день, когда употребляете алкоголь?",
+      textPl: "Jaką ilość napojów alkoholowych spożywasz w typowy dzień, w którym pijesz alkohol?",
+      textUk: "Скільки алкогольних напоїв ви випиваєте у звичайний день, коли вживаєте алкоголь?",
+      textRo: "Într-o zi tipică în care consumați alcool, câte porții consumați?",
+      textAr: "في يوم عادي تتناول فيه المشروبات، كم عدد المشروبات الكحولية التي تتناولها؟",
+      options: [
+        { id: "1_2", labelEn: "1 or 2", labelDe: "1 oder 2", labelTr: "1 veya 2", labelRu: "1 или 2", labelPl: "1 lub 2", labelUk: "1 або 2", labelRo: "1 sau 2", labelAr: "1 أو 2", points: 0 },
+        { id: "3_4", labelEn: "3 or 4", labelDe: "3 oder 4", labelTr: "3 veya 4", labelRu: "3 или 4", labelPl: "3 lub 4", labelUk: "3 або 4", labelRo: "3 sau 4", labelAr: "3 أو 4", points: 10 },
+        { id: "5_plus", labelEn: "5 or more", labelDe: "5 oder mehr", labelTr: "5 veya daha fazla", labelRu: "5 или более", labelPl: "5 i więcej", labelUk: "5 або більше", labelRo: "5 sau mai multe", labelAr: "5 أو أكثر", points: 25 },
+      ]
+    },
+    {
+      id: "guilt",
+      textEn: "Have you ever felt that you ought to cut down on your drinking?",
+      textDe: "Haben Sie jemals das Gefühl gehabt، dass Sie Ihren Alkoholkonsum reduzieren sollten?",
+      textTr: "Hiç içkiyi azaltmanız gerektiğini hissettiğiniz oldu mu?",
+      textRu: "Чувствовали ли вы когда-нибудь, что вам следует сократить употребление алкоголя?",
+      textPl: "Czy kiedykolwiek czułeś, że powinieneś ograniczyć picie alkoholu?",
+      textUk: "Чи відчували ви коли-небудь, що вам слід менше вживати алкоголь?",
+      textRo: "Ați simțit vreodată că ar trebui să reduceți consumul de alcool?",
+      textAr: "هل شعرت يوماً أنه ينبغي عليك الإقلال من الشرب؟",
+      options: [
+        { id: "no", labelEn: "No", labelDe: "Nein", labelTr: "Hayır", labelRu: "Нет", labelPl: "Nie", labelUk: "Ні", labelRo: "Nu", labelAr: "لا", points: 0 },
+        { id: "yes", labelEn: "Yes", labelDe: "Ja", labelTr: "Evet", labelRu: "Да", labelPl: "Tak", labelUk: "Так", labelRo: "Da", labelAr: "نعم", points: 15 },
+      ]
+    },
+    {
+      id: "criticism",
+      textEn: "Have people annoyed you by criticizing your drinking?",
+      textDe: "Haben Sie sich über Kritik an Ihrem Trinkverhalten geärgert?",
+      textTr: "İnsanların içki alışkanlığınızı eleştirmesi canınızı sıktı mı?",
+      textRu: "Раздражало ли вас когда-нибудь, что люди критикуют ваше привычки употребления алкоголя?",
+      textPl: "Czy irytowało Cię kiedyś, że ludzie krytykują sposób, w jaki pijesz?",
+      textUk: "Чи дратувало вас коли-небудь, що люди критикують те, як ви вживаєте алкоголь?",
+      textRo: "V-au enervat oamenii prin criticarea consumului dumneavoastră de alcool?",
+      textAr: "هل ضايقك الناس بانتقادهم لشربك؟",
+      options: [
+        { id: "no", labelEn: "No", labelDe: "Nein", labelTr: "Hayır", labelRu: "Нет", labelPl: "Nie", labelUk: "Ні", labelRo: "Nu", labelAr: "لا", points: 0 },
+        { id: "yes", labelEn: "Yes", labelDe: "Ja", labelTr: "Evet", labelRu: "Да", labelPl: "Tak", labelUk: "Так", labelRo: "Da", labelAr: "نعم", points: 10 },
+      ]
+    }
+  ],
+  explanations: {
+    lowEn: "Your responses suggest you currenty have a low-risk consumption profile. Awareness of moderation is the best way to maintain health.",
+    lowDe: "Ihre Antworten deuten auf ein risikoarmes Konsumprofil hin. Ein bewusst maßvoller Umgang ist der beste Weg، die Gesundheit zu erhalten.",
+    lowTr: "Cevaplarınız şu anda düşük riskli bir tüketim profiliniz olduğunu gösteriyor. Ölçülülük sağlıkla kalmanın en iyi yoludur.",
+    lowRu: "Ваши ответы указывают на профиль потребления с низким уровнем риска. Умеренность — лучший способ сохранить здоровье.",
+    lowPl: "Twoje odpowiedzi sugerują profil spożycia o niskim ryzyku. Świadomość i umiarkowanie to najlepszy sposób na zachowanie zdrowia.",
+    lowUk: "Ваші відповіді вказують на профіль споживання з низьким рівнем ризику. Помірність — найкращий шлях до здоров'я.",
+    lowRo: "Răspunsurile dumneavoastră sugerează un profil de consum cu risc scăzut în prezent. Conștientizarea moderației este cea mai bună cale de a menține sănătatea.",
+    lowAr: "تشير إجاباتك إلى أن لديك حالياً ملف لاستهلاك الكحول منخفض المخاطر. الوعي بالاعتدال هو أفضل وسيلة للحفاظ على الصحة.",
+    elevatedEn: "Your consumption pattern shows elements of hazardous use. Reducing intake could significantly improve your long-term health and wellbeing.",
+    elevatedDe: "Ihr Konsummuster weist Merkmale eines riskanten Gebrauchs auf. Eine Reduzierung des Konsums könnte Ihre langfristige Gesundheit deutlich verbessern.",
+    elevatedTr: "Tüketim alışkanlığınız tehlikeli kullanım belirtileri gösteriyor. Tüketimi azaltmak uzun vadeli sağlığınızı ve refahınızı önemli ölçüde iyileştirebilir.",
+    elevatedRu: "Ваш привычный способ употребления алкоголя указывает на вероятность опасного использования. Снижение потребления поможет улучшить самочувствие.",
+    elevatedPl: "Twój sposób spożycia wskazuje na elementy ryzykowne. Ograniczenie ilości alkoholu mogłoby znacząco poprawić Twoje zdrowie i samopoczucie.",
+    elevatedUk: "Ваші звички вказують на небезпечний рівень споживання. Зниження споживання алкоголю допоможе покращити ваше самопочуття.",
+    elevatedRo: "Modelul dumneavoastră de consum prezintă elemente de utilizare periculoasă. Reducerea consumului ar putea îmbunătăți semnificativ sănătatea.",
+    elevatedAr: "يُظهر نمط استهلاكك عناصر من الاستخدام الخطير. قد يؤدي تقليل الكميات إلى تحسين صحتك ورفاهيتك على المدى الطويل بشكل كبير.",
+    highEn: "Your answers indicate a high probability of harmful drinking patterns. We strongly recommend seeking professional advice from a clinician or a specialized counselor.",
+    highDe: "Ihre Antworten deuten auf eine hohe Wahrscheinlichkeit für schädliche Trinkmuster hin. Wir empfehlen dringend، professionellen Rat bei einem Arzt oder Berater einzuholen.",
+    highTr: "Cevaplarınız zararlı içme alışkanlıkları olasılığının yüksek olduğunu gösteriyor. Bir klinik tedavi uzmanından veya bir danışmandan yardım almanızı şiddetle öneririz.",
+    highRu: "Ваши ответы указывают на высокую вероятность вредных привычек. Настоятельно рекомендуем обратиться за помощью к специалисту по зависимостям.",
+    highPl: "Twoje odpowiedzi wskazują na wysokie prawdopodobieństwo szkodliwych wzorców picia. Silnie zalecamy profesjonalną rozmowę z lekarzem lub doradcą ds. uzależnień.",
+    highUk: "Ваші відповіді вказують на високу ймовірність шкідливих звичок. Наполегливо радимо звернутися за допомогою до фахівця з питань залежностей.",
+    highRo: "Răspunsurile dumneavoastră indică o probabilitate ridicată de modele dăunătoare de consum. Vă recomandăm cu tărie să solicitați sfatul unui profesionist.",
+    highAr: "تشير إجاباتك إلى احتمالية عالية لأنماط الشرب الضارة. نوصي بشدة بطلب المشورة التخصصية من طبيب أو مستشار متخصص."
+  },
+  recommendationsEn: [
+    "Aim to have several alcohol-free days each week to allow your body to recover.",
+    "Monitor your drinking by keeping track of units consumed over time.",
+    "Discuss your consumption and habits with a trusted healthcare professional.",
+    "Find alternative ways to relax or cope with stress that do not involve alcohol.",
+    "Identify triggers that lead to heavy drinking and plan how to avoid or manage them.",
+    "Set clear personal limits before you start drinking in social situations.",
+    "Prioritize hydration by alternating alcoholic drinks with water."
+  ],
+  recommendationsDe: [
+    "Planen Sie jede Woche mehrere alkoholfreie Tage ein, um Ihrem Körper Erholungsphasen zu ermöglichen.",
+    "Beobachten Sie Ihr Trinkverhalten، indem Sie die konsumierten Einheiten im Auge behalten.",
+    "Besprechen Sie Ihren Konsum und Ihre Gewohnheiten mit einer medizinischen Fachkraft Ihres Vertrauens.",
+    "Finden Sie alternative Wege zum Entspannen oder zur Stressbewältigung, die keinen Alkohol beinhalten.",
+    "Identifizieren Sie Auslöser für verstärktes Trinken und planen Sie Strategien، diese zu vermeiden.",
+    "Setzen Sie sich klare persönliche Limits، bevor Sie in sozialen Situationen anfangen zu trinken.",
+    "Achten Sie auf ausreichende Flüssigkeitszufuhr, indem Sie alkoholische Getränke mit Wasser abwechseln."
+  ],
+  recommendationsTr: [
+    "Vücudunuzun toparlanmasına izin vermek için her hafta birkaç alkolsüz gün geçirmeyi hedefleyin.",
+    "Zaman içinde tüketilen birimleri takip ederek içki alışkanlığınızı izleyin.",
+    "Tüketiminiz ve alışkanlıklarınız hakkında güvenilir bir sağlık uzmanıyla konuşun.",
+    "Alkol içermeyen alternatif rahatlama veya stresle başa çıkma yolları bulun.",
+    "Aşırı içkiye yol açan tetikleyicileri belirleyin ve bunlardan nasıl kaçınacağınızı planlayın.",
+    "Sosyal ortamlarda içmeye başlamadan önce kendinize net kişisel sınırlar koyun.",
+    "Alkollü içeceklerle suyu dönüşümlü kullanarak su tüketimine öncelik verin."
+  ],
+  recommendationsRu: [
+    "Старайтесь делать несколько полностью безалкогольных дней в неделю, чтобы дать организму отдохнуть.",
+    "Контролируйте употребление алкоголя, отслеживая количество выпитого за определенное время.",
+    "Обсудите свои привычки с врачом, которому вы доверяете.",
+    "Найдите альтернативные способы снятия стресса и расслабления, не связанные с алкоголем.",
+    "Определите триггеры, которые приводят к употреблению алкоголя, и составьте план того, как с ними справляться.",
+    "Устанавливайте четкие личные границы перед посещением социальных мероприятий.",
+    "Пейте больше простой воды параллельно с алкогольными напитками."
+  ],
+  recommendationsPl: [
+    "Staraj się planować kilka dni bez alkoholu w każdym tygodniu, aby dać organizmowi czas na regenerację.",
+    "Monitoruj sposób picia, śledząc ilość spożywanych jednostek alkoholu w czasie.",
+    "Porozmawiaj o swoich nawykach z zaufanym lekarzem lub specjalistą.",
+    "Znajdź alternatywne sposoby na relaks lub radzenie sobie ze stresem, które nie wymagają sięgania po alkohol.",
+    "Zidentyfikuj czynniki wyzwalające chęć picia i zaplanuj, jak ich unikać lub nimi zarządzać.",
+    "Wyznaczaj sobie jasne granice przed wyjściem na spotkania towarzyskie, na których jest alkohol.",
+    "Pamiętaj o nawodnieniu, pijąc wodę na przemian z napojami alkoholowymi."
+  ],
+  recommendationsUk: [
+    "Намагайтеся робити кілька днів на тиждень повністю без алкоголю, щоб дати організму відпочити.",
+    "Контролюйте вживання алкоголю, відстежуючи кількість одиниць.",
+    "Обговоріть свої звички зі спеціалістом, якому ви довіряєте.",
+    "Знайдіть альтернативні способи розслаблення або боротьби зі стресом без алкоголю.",
+    "Визначте ситуації (тригери), які спонукають до вживання, та складіть план, як з ними справлятися.",
+    "Встановлюйте чіткі особисті межі перед заходами, де вживають алкоголь.",
+    "Пийте більше чистої води паралельно з вживанням алкогольних напоїв."
+  ],
+  recommendationsRo: [
+    "Propuneți-vă să aveți mai multe zile fără alcool în fiecare săptămână pentru a vă recupera.",
+    "Monitorizați consumul urmărind unitățile consumate de-a lungul timpului.",
+    "Discutați despre consumul și obiceiurile dumneavoastră cu un medic de încredere.",
+    "Găsiți modalități alternative de a vă relaxa sau de a face față stresului care nu implică alcoolul.",
+    "Identificați factorii declanșatori care duc la consumul excesiv și planificați gestionarea lor.",
+    "Stabiliți limite personale clare înainte de a începe să consumați alcool în contexte sociale.",
+    "Prioritizați hidratarea prin alternarea băuturilor alcoolice cu apă."
+  ],
+  recommendationsAr: [
+    "اسعَ لتخصيص عدة أيام خالية من الكحول كل أسبوع للسماح لجسمك بالتعافي.",
+    "راقب شربك من خلال تتبع وحدات الكحول المستهلكة بمرور الوقت.",
+    "ناقش استهلاكك وعاداتك مع مختص رعاية صحية موثوق به.",
+    "ابحث عن طرق بديلة للاسترخاء أو التعامل مع التوتر لا تتضمن استهلاك الكحول.",
+    "حدد المحفزات التي تؤدي إلى الشرب بكثرة وخطط لكيفية تجنبها أو إدارتها.",
+    "ضع حدوداً شخصية واضحة قبل البدء بالشرب في المناسبات الاجتماعية.",
+    "أعطِ الأولوية لترطيب الجسم من خلال التناوب بين المشروبات الكحولية والماء."
+  ]
+};

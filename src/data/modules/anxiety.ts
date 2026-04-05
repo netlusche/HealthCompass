@@ -1,0 +1,198 @@
+import { ModuleDefinition } from "@/types/assessment";
+
+export const anxietyModule: ModuleDefinition = {
+  id: "anxiety",
+  titleEn: "Anxiety & Persistent Worry Warning Signs",
+  titleDe: "Warnsignale für Angst & ständige Sorgen",
+  titleTr: "Kaygı ve Sürekli Endişe Uyarı İşaretleri",
+  titleRu: "Тревога и признаки постоянного беспокойства",
+  titlePl: "Oznaki Lęku i Uporczywego Niepokoju",
+  titleUk: "Тривога та ознаки постійного занепокоєння",
+  titleRo: "Semne de Avertizare pentru Anxietate și Îngrijorare Persistentă",
+  titleAr: "مؤشرات القلق والتوتر المستمر",
+  descriptionEn: "A supportive screening for symptoms of generalized anxiety, persistent worry, and emotional strain in daily life.",
+  descriptionDe: "Ein unterstützendes Screening auf Symptome generalisierter Angst, ständiger Sorgen und emotionaler Belastung im Alltag.",
+  descriptionTr: "Yaygın kaygı, sürekli endişe ve günlük yaşamdaki duygusal gerginlik belirtileri için destekleyici bir tarama.",
+  descriptionRu: "Поддерживающий скрининг на симптомы генерализованной тревоги, постоянного беспокойства и эмоционального напряжения.",
+  descriptionPl: "Wspierające badanie pod kątem objawów uogólnionego lęku, uporczywego martwienia się i obciążenia emocjonalnego.",
+  descriptionUk: "Підтримувальний скринінг на симптоми генералізованого тривожного стану та постійного занепокоєння.",
+  descriptionRo: "O evaluare de susținere pentru simptomele de anxietate generalizată, îngrijorare persistentă și tensiune emoțională.",
+  descriptionAr: "فحص داعم لأعراض القلق العام، والتوتر المستمر، والإجهاد العاطفي في الحياة اليومية.",
+  disclaimerEn: "This assessment is an orientation aid and does not replace a medical diagnosis. If you feel burdened or if signs persist, please consult a specialist doctor or therapist.",
+  disclaimerDe: "Diese Einschätzung ist eine Orientierungshilfe und ersetzt keine ärztliche Diagnose. Wenn Sie sich belastet fühlen oder Anzeichen fortbestehen, suchen Sie bitte einen Facharzt oder Therapeuten auf.",
+  disclaimerTr: "Bu değerlendirme bir oryantasyon yardımıdır ve tıbbi teşhisin yerini almaz. Kendinizi yük altında hissediyorsanız veya belirtiler devam ediyorsa, lütfen bir uzman doktora veya terapiste danışın.",
+  disclaimerRu: "Эта оценка является ориентировочной и не заменяет медицинский диагноз. Если вы чувствуете нагрузку или признаки сохраняются, обратитесь к врачу-специалисту или терапевту.",
+  disclaimerPl: "Ta ocena jest pomocą orientacyjną i nie zastępuje diagnozy medycznej. Jeśli czujesz się obciążony lub objawy się utrzymują, skonsultuj się z lekarzem specjalistą lub terapeutą.",
+  disclaimerUk: "Ця оцінка є орієнтиром і не замінює медичний діагноз. Якщо ви відчуваєте навантаження або ознаки тривають, зверніться до лікаря-спеціаліста або терапевта.",
+  disclaimerRo: "Această evaluare este un ajutor de orientare și nu înlocuiește un diagnostic medical. Dacă vă simțiți împovărat sau dacă semnele persistă, consultați un medic specialist sau un terapeut.",
+  disclaimerAr: "هذا التقييم هو أداة توجيهية ولا يغني عن التشخيص الطبي. إذا كنت تشعر بالعبء أو إذا استمرت هذه العلامات، يرجى استشارة طبيب مختص أو معالج نفسي.",
+  thresholds: {
+    elevated: 34,
+    high: 64,
+  },
+  questions: [
+    {
+      id: "worry_frequency",
+      textEn: "How often have you been bothered by feeling nervous, anxious, or on edge over the last two weeks?",
+      textDe: "Wie oft fühlten Sie sich in den letzten zwei Wochen nervös, ängstlich oder angespannt?",
+      textTr: "Son iki hafta içinde ne sıklıkla gergin, kaygılı veya tetikte hissetmekten rahatsız oldunuz?",
+      textRu: "Как часто за последние две недели вы чувствовали нервозность, тревогу или напряжение?",
+      textPl: "Jak często w ciągu ostatnich dwóch tygodni czułeś się zdenerwowany, lękliwy lub spięty?",
+      textUk: "Як часто за останні два тижні ви відчували нервозність, тривогу або напруження?",
+      textRo: "Cât de des ați fost deranjat de sentimente de nervozitate, anxietate sau tensiune în ultimele două săptămâni?",
+      textAr: "كم مرة شعرت بالانزعاج بسبب الشعور بالعصبية أو القلق أو التوتر خلال الأسبوعين الماضيين؟",
+      options: [
+        { id: "never", labelEn: "Not at all", labelDe: "Gar nicht", labelTr: "Hiç", labelRu: "Совсем нет", labelPl: "Wcale", labelUk: "Зовсім ні", labelRo: "Deloc", labelAr: "ليس على الإطلاق", points: 0 },
+        { id: "sometimes", labelEn: "Several days", labelDe: "An einigen Tagen", labelTr: "Birkaç gün", labelRu: "Несколько дней", labelPl: "Kilka dni", labelUk: "Кілька днів", labelRo: "Mai multe zile", labelAr: "عدة أيام", points: 10 },
+        { id: "often", labelEn: "More than half the days", labelDe: "An mehr als der Hälfte der Tage", labelTr: "Günlerin yarısından fazlasında", labelRu: "Более половины дней", labelPl: "Ponad połowę dni", labelUk: "Більше половини днів", labelRo: "Mai mult de jumătate din zile", labelAr: "أكثر من نصف الأيام", points: 20 },
+        { id: "daily", labelEn: "Nearly every day", labelDe: "Beinahe jeden Tag", labelTr: "Hemen hemen her gün", labelRu: "Почти каждый день", labelPl: "Prawie codziennie", labelUk: "Майже кожен день", labelRo: "Aproape în fiecare zi", labelAr: "كل يوم تقريباً", points: 30 },
+      ]
+    },
+    {
+      id: "control_worry",
+      textEn: "Do you find it difficult to stop or control your worrying?",
+      textDe: "Fällt es Ihnen schwer, mit dem Grübeln aufzuhören oder Ihre Sorgen zu kontrollieren?",
+      textTr: "Endişelenmeyi durdurmakta veya kontrol etmekte zorlanıyor musunuz?",
+      textRu: "Трудно ли вам остановить или контролировать свое беспокойство?",
+      textPl: "Czy trudno jest Ci przestać się martwić lub kontrolować swoje obawy?",
+      textUk: "Чи важко вам зупинити або контролювати свої занепокоєння?",
+      textRo: "Vă este greu să vă opriți din îngrijorare sau să vă controlați grijile?",
+      textAr: "هل تجد صعوبة في التوقف عن القلق أو السيطرة عليه؟",
+      options: [
+        { id: "no", labelEn: "No, I can manage it", labelDe: "Nein, ich kann damit umgehen", labelTr: "Hayır, yönetebiliyorum", labelRu: "Нет, я справляюсь", labelPl: "Nie, potrafię nad tym zapanować", labelUk: "Ні, я справляюся", labelRo: "Nu, pot să gestionez asta", labelAr: "لا، يمكنني التعامل مع الأمر", points: 0 },
+        { id: "somewhat", labelEn: "Sometimes it feels overwhelming", labelDe: "Manchmal fühlt es sich überwältigend an", labelTr: "Bazen bunaltıcı hissettiriyor", labelRu: "Иногда это кажется непосильным", labelPl: "Czasami bywa to przytłaczające", labelUk: "Іноді це здається непосильним", labelRo: "Uneori pare copleșitor", labelAr: "أحياناً يبدو الأمر غامراً", points: 15 },
+        { id: "frequently", labelEn: "Yes, it is very hard to control", labelDe: "Ja, es ist sehr schwer zu kontrollieren", labelTr: "Evet, kontrol etmesi çok zor", labelRu: "Да, это очень трудно контролировать", labelPl: "Tak, bardzo trudno to kontrolować", labelUk: "Так, це дуже важко контролювати", labelRo: "Da, este foarte greu de controlat", labelAr: "نعم، من الصعب جداً السيطرة عليه", points: 25 },
+      ]
+    },
+    {
+      id: "trouble_relaxing",
+      textEn: "How often have you had trouble relaxing lately?",
+      textDe: "Wie oft hatten Sie in letzter Zeit Schwierigkeiten, sich zu entspannen?",
+      textTr: "Son zamanlarda ne sıklıkla rahatlamakta zorluk çektiniz?",
+      textRu: "Как часто в последнее время вам было трудно расслабиться?",
+      textPl: "Jak często ostatnio miałeś trudności z relaksem?",
+      textUk: "Як часто останнім часом вам було важко розслабитися?",
+      textRo: "Cât de des ați avut dificultăți în a vă relaxa în ultimul timp?",
+      textAr: "كم مرة واجهت صعوبة في الاسترخاء مؤخراً؟",
+      options: [
+        { id: "rarely", labelEn: "Rarely", labelDe: "Selten", labelTr: "Nadiren", labelRu: "Редко", labelPl: "Rzadko", labelUk: "Рідко", labelRo: "Rareori", labelAr: "نادراً", points: 0 },
+        { id: "sometimes", labelEn: "Several days", labelDe: "An einigen Tagen", labelTr: "Birkaç gün", labelRu: "Несколько дней", labelPl: "Kilka dni", labelUk: "Кілька днів", labelRo: "Mai multe zile", labelAr: "عدة أيام", points: 10 },
+        { id: "frequently", labelEn: "Nearly every day", labelDe: "Beinahe jeden Tag", labelTr: "Hemen hemen her gün", labelRu: "Почти каждый день", labelPl: "Prawie codziennie", labelUk: "Майже кожен день", labelRo: "Aproape în fiecare zi", labelAr: "كل يوم تقريباً", points: 20 },
+      ]
+    },
+    {
+      id: "irritability",
+      textEn: "Have you been feeling easily annoyed or irritable?",
+      textDe: "Fühlten Sie sich in letzter Zeit leicht verärgert oder gereizt?",
+      textTr: "Kolayca sinirleniyor veya huzursuz hissediyor musunuz?",
+      textRu: "Часто ли вы чувствуете раздражительность?",
+      textPl: "Czy czułeś się ostatnio łatwo irytujący lub drażliwy?",
+      textUk: "Чи відчували ви роздратування останнім часом?",
+      textRo: "V-ați simțit ușor enervat sau iritabil?",
+      textAr: "هل كنت تشعر بالانزعاج بسهولة أو بحدة الطباع؟",
+      options: [
+        { id: "no", labelEn: "No, more than usual", labelDe: "Nein, nicht mehr als sonst", labelTr: "Hayır, normalden fazla değil", labelRu: "Нет, не чаще обычного", labelPl: "Nie, nie bardziej niż zwykle", labelUk: "Ні, не частіше ніж зазвичай", labelRo: "Nu, nu mai mult decât de obicei", labelAr: "لا، ليس أكثر من المعتاد", points: 0 },
+        { id: "somewhat", labelEn: "Several days", labelDe: "An einigen Tagen", labelTr: "Birkaç gün", labelRu: "Несколько дней", labelPl: "Kilka dni", labelUk: "Кілька днів", labelRo: "Mai multe zile", labelAr: "عدة أيام", points: 10 },
+        { id: "frequently", labelEn: "Nearly every day", labelDe: "Beinahe jeden Tag", labelTr: "Hemen hemen her gün", labelRu: "Почти каждый день", labelPl: "Prawie codziennie", labelUk: "Майже кожен день", labelRo: "Aproape în fiecare zi", labelAr: "كل يوم تقريباً", points: 15 },
+      ]
+    }
+  ],
+  explanations: {
+    lowEn: "Your responses suggest you are currently managing daily worries well. Maintaining a balanced lifestyle remains important.",
+    lowDe: "Ihre Antworten deuten darauf hin, dass Sie tägliche Sorgen derzeit gut bewältigen. Ein ausgewogener Lebensstil bleibt wichtig.",
+    lowTr: "Cevaplarınız şu anda günlük endişeleri iyi yönettiğinizi gösteriyor. Dengeli bir yaşam tarzını sürdürmek hala önemlidir.",
+    lowRu: "Ваши ответы говорят о том, что вы хорошо справляетесь с ежедневными тревогами. Сохранение баланса по-прежнему важно.",
+    lowPl: "Twoje odpowiedzi sugerują, że obecnie dobrze radzisz sobie z codziennymi zmartwieniami. Zachowanie zrównoważonego stylu życia pozostaje ważne.",
+    lowUk: "Ваші відповіді вказують на те, що ви добре справляєтеся з поточними занепокоєннями. Збереження балансу залишається важливим.",
+    lowRo: "Răspunsurile dumneavoastră sugerează că gestionați bine grijile zilnice în prezent. Menținerea unui stil de viață echilibrat rămâne importantă.",
+    lowAr: "تشير إجاباتك إلى أنك تدير همومك اليومية بشكل جيد في الوقت الحالي. يظل الحفاظ على نمط حياة متوازن أمراً مهماً.",
+    elevatedEn: "You are experiencing some elevated levels of worry and tension. Practical steps for relaxation and time away from stress could be helpful.",
+    elevatedDe: "Sie erleben derzeit ein erhöhtes Maß an Sorge und Anspannung. Praktische Schritte zur Entspannung und Auszeiten vom Stress könnten hilfreich sein.",
+    elevatedTr: "Yüksek düzeyde endişe ve gerginlik yaşıyorsunuz. Rahatlamak için pratik adımlar ve stresten uzaklaşmak faydalı olabilir.",
+    elevatedRu: "Вы испытываете повышенный уровень беспокойства и напряжения. Рекомендуем обратить внимание на техники релаксации.",
+    elevatedPl: "Doświadczasz podwyższonego poziomu niepokoju i napięcia. Pomocne mogą być praktyczne kroki w celu relaksacji i odpoczynku od stresu.",
+    elevatedUk: "Ви відчуваєте підвищений рівень занепокоєння та напруження. Рекомендуємо приділити увагу техникам релаксації.",
+    elevatedRo: "Vă confruntați cu niveluri crescute de îngrijorare și tensiune. Pașii practici pentru relaxare și timpul petrecut departe de stres ar putea fi de ajutor.",
+    elevatedAr: "أنت تواجه مستويات مرتفعة من القلق والتوتر. قد يكون من المفيد اتباع خطوات عملية للاسترخاء والحصول على وقت بعيد عن الضغوط.",
+    highEn: "Your results indicate significant persistent worry and strain. We strongly suggest speaking with a trusted healthcare professional or therapist.",
+    highDe: "Ihre Ergebnisse deuten auf erhebliche anhaltende Sorgen und Belastungen hin. Wir empfehlen dringend, mit einem Arzt oder Therapeuten zu sprechen.",
+    highTr: "Sonuçlarınız önemli ölçüde kalıcı endişe ve gerginlik gösteriyor. Güvendiğiniz bir sağlık uzmanı veya terapistle konuşmanızı şiddetle tavsiye ederiz.",
+    highRu: "Ваши показатели указывают на значительное постоянное беспокойство. Настоятельно рекомендуем обратиться за поддержкой к специалисту.",
+    highPl: "Twoje wyniki wskazują na znaczny, uporczywy niepokój i obciążenie emocjonalne. Silnie sugerujemy rozmowę z lekarzem lub terapeutą.",
+    highUk: "Ваші показники вказують на суттєве постійне занепокоєння. Наполегливо радимо звернутися за підтримкою до фахівця.",
+    highRo: "Rezultatele dumneavoastră indică o îngrijorare și o tensiune persistente și semnificative. Vă sugerăm cu tărie să discutați cu un profesionist.",
+    highAr: "تشير نتائجك إلى وجود قلق وتوتر مستمر بشكل كبير. نقترح بشدة التحدث مع مختص رعاية صحية موثوق به أو معالج نفسي."
+  },
+  recommendationsEn: [
+    "Practice mindfulness or breathing exercises daily to calm your nervous system.",
+    "Schedule dedicated 'worry time' once a day to focus on concerns instead of letting them linger.",
+    "Limit caffeine and alcohol, as they can worsen feelings of physical tension.",
+    "Engage in gentle physical activity, like walking, to reduce accumulated stress.",
+    "Prioritize regular sleep patterns and create a calming evening routine.",
+    "Focus on things you can control and practice letting go of things you cannot.",
+    "Consider professional counseling if your worries consistently interfere with daily life."
+  ],
+  recommendationsDe: [
+    "Praktizieren Sie täglich Achtsamkeits- oder Atemübungen, um Ihr Nervensystem zu beruhigen.",
+    "Planen Sie einmal am Tag eine feste 'Grübelzeit' ein, um sich auf Sorgen zu konzentrieren، anstatt sie den ganzen Tag zuzulassen.",
+    "Begrenzen Sie Koffein und Alkohol, da diese körperliche Spannungsgefühle verschlimmern können.",
+    "Bewegen Sie sich regelmäßig an der frischen Luft, um angesammelten Stress abzubauen.",
+    "Achten Sie auf regelmäßige Schlafzeiten und schaffen Sie sich eine beruhigende Abendroutine.",
+    "Konzentrieren Sie sich auf Dinge، die Sie kontrollieren können، und üben Sie, Unveränderliches loszulassen.",
+    "Ziehen Sie eine professionelle Beratung in Erwägung, wenn Ihre Sorgen den Alltag dauerhaft beeinträchtigen."
+  ],
+  recommendationsTr: [
+    "Sinir sisteminizi sakinleştirmek için her gün farkındalık veya nefes egzersizleri yapın.",
+    "Endişelerin tüm güne yayılmasına izin vermek yerine, günde bir kez bunlara odaklanmak için özel bir 'endişe zamanı' belirleyin.",
+    "Kafein ve alkolü sınırlayın, çünkü bunlar fiziksel gerginlik hissini kötüleştirebilir.",
+    "Birikmiş stresi azaltmak için yürüyüş gibi hafif fiziksel aktiviteler yapın.",
+    "Düzenli uyku saatlerine öncelik verin ve sakinleştirici bir akşam rutini oluşturun.",
+    "Kontrol edebileceğiniz şeylere odaklanın ve kontrol edemediğiniz şeyleri bırakma alıştırması yapın.",
+    "Endişeleriniz günlük hayatınızı sürekli engelliyorsa profesyonel danışmanlık almayı düşünün."
+  ],
+  recommendationsRu: [
+    "Ежедневно практикуйте техники осознанности или дыхательные упражнения, чтобы успокоить нервную систему.",
+    "Выделяйте 15 минут в день на 'время для беспокойства', чтобы обдумать тревоги за один раз, а не в течение всего дня.",
+    "Ограничьте кофеин и алкоголь, так как они могут усиливать чувство физического напряжения.",
+    "Занимайтесь легкой физической активностью, например, ходьбой.",
+    "Соблюдайте режим сна и создайте успокаивающий ритуал перед сном.",
+    "Сосредоточьтесь на том, что вы можете контролировать, и учитесь отпускать то, что вне вашего влияния.",
+    "Обратитесь за профессиональной консультацией, если тревога мешает вашей обычной жизни."
+  ],
+  recommendationsPl: [
+    "Codziennie ćwicz uważność lub proste ćwiczenia oddechowe, aby wyciszyć układ nerwowy.",
+    "Ustal stały czas na 'martwienie się' raz dziennie, aby skupić się na obawach zamiast dopuszczać je do siebie przez cały czas.",
+    "Ogranicz kofeinę i alkohol, ponieważ mogą one nasilać uczucie fizycznego napięcia.",
+    "Podejmuj łagodną aktywność fizyczną, np. spacery, aby zredukować nagromadzony stres.",
+    "Dbaj o stałe godziny snu i stwórz wyciszający rytuał wieczorny.",
+    "Skupiaj się na rzeczach, na które masz wpływ, i ćwicz odpuszczanie tych, których nie możesz kontrolować.",
+    "Rozważ profesjonalne wsparcie psychologiczne, jeśli niepokój utrudnia Ci codzienne funkcjonowanie."
+  ],
+  recommendationsUk: [
+    "Щодня практикуйте техніки усвідомленості або дихальні вправи.",
+    "Виділяйте певний час на день для занепокоєнь, щоб не думати про них постійно.",
+    "Обмежте кофеїн та алкоголь, оскільки вони можуть посилювати відчуття напруги.",
+    "Займайтеся легкою активністю, наприклад, прогулянками.",
+    "Дотримуйтеся режиму сна та створіть заспокійливий вечірній ритуал.",
+    "Зосереджуйтеся на тому, що ви можете контролювати, та вчіться відпускати решту.",
+    "Розгляньте можливість професійної консультації, якщо тривога заважає вашому життю."
+  ],
+  recommendationsRo: [
+    "Practicați mindfulness sau exerciții de respirație zilnic pentru a vă calma sistemul nervos.",
+    "Programați un 'timp de îngrijorare' dedicat o dată pe zi pentru a vă concentra pe preocupări în loc să le lăsați să persiste.",
+    "Limitați cofeina și alcoolul, deoarece acestea pot agrava sentimentele de tensiune fizică.",
+    "Implicați-vă în activitate fizică ușoară, cum ar fi mersul pe jos, pentru a reduce stresul acumulat.",
+    "Prioritizați un program de somn regulat și creați o rutină de seară relaxantă.",
+    "Concentrați-vă pe lucrurile pe care le puteți controla și exersați eliberarea celor pe care nu le puteți controla.",
+    "Luați în considerare consilierea profesională dacă grijile vă interferează constant cu viața de zi cu zi."
+  ],
+  recommendationsAr: [
+    "مارس تمارين التأمل أو تمارين التنفس يومياً لتهدئة جهازك العصبي.",
+    "خصص 'وقتاً للقلق' مرة واحدة في اليوم للتركيز على المخاوف بدلاً من تركها تستمر طوال اليوم.",
+    "قلل من الكافيين والكحول، حيث يمكنهما تفاقم الشعور بالتوتر الجسدي.",
+    "مارس نشاطاً بدنياً خفيفاً، مثل المشي، لتقليل التوتر المتراكم.",
+    "أعطِ الأولوية لأنماط النوم المنتظمة وقم بإنشاء روتين مسائي مهدئ.",
+    "ركز على الأشياء التي يمكنك التحكم فيها وتدرب على التخلص من الأشياء التي لا يمكنك التحكم فيها.",
+    "فكر في الحصول على استشارة تخصصية إذا كان قلقك يتعارض باستمرار مع حياتك اليومية."
+  ]
+};
