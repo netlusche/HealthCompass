@@ -75,6 +75,19 @@ export const pl: LegalDictionary = {
       }
     ]
   },
+  accessibility: {
+    title: "Accessibility Statement",
+    sections: [
+      {
+        title: "Commitment to Accessibility",
+        content: "We strive to make this website accessible in accordance with national legislation implementing Directive (EU) 2016/2102."
+      },
+      {
+        title: "Status of Compliance",
+        content: "This website is largely compliant with the common web standards (WCAG 2.1). We are continuously working on further improvements."
+      }
+    ]
+  },
   checklist: {
     title: "Ostateczna lista kontrolna przed publikacją",
     items: [

@@ -15,6 +15,7 @@ export interface LegalDictionary {
   imprint: LegalPage;
   disclaimer: LegalPage;
   copyright: LegalPage;
+  accessibility: LegalPage;
   checklist: {
     title: string;
     items: string[];

@@ -75,6 +75,19 @@ export const de: LegalDictionary = {
       }
     ]
   },
+  accessibility: {
+    title: "Erklärung zur Barrierefreiheit",
+    sections: [
+      {
+        title: "Bemühen um Barrierefreiheit",
+        content: "Wir bemühen uns, diese Website im Einklang mit den nationalen Rechtsvorschriften zur Umsetzung der Richtlinie (EU) 2016/2102 barrierefrei zugänglich zu machen."
+      },
+      {
+        title: "Stand der Vereinbarkeit",
+        content: "Diese Website ist mit den gängigen Webstandards (WCAG 2.1) weitgehend vereinbar. Wir arbeiten kontinuierlich an weiteren Verbesserungen."
+      }
+    ]
+  },
   checklist: {
     title: "Checkliste vor Veröffentlichung",
     items: [
