@@ -1,6 +1,10 @@
 import { Dictionary } from "./en";
 
 export const de: Dictionary = {
+  meta: {
+    title: "HealthCompass – Anonyme Gesundheits-Checks",
+    description: "Private Selbsttests für Herzinfarkt, Demenz und mehr. Mehrsprachig, anonym und einfach."
+  },
   nav: {
     home: "Startseite",
     about: "Über uns",

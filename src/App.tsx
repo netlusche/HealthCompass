@@ -23,12 +23,50 @@ import Imprint from './pages/Imprint';
 import Kidney from './pages/Kidney';
 import Osteoporosis from './pages/Osteoporosis';
 import Privacy from './pages/Privacy';
+import { useI18n } from './components/providers/I18nProvider';
+
+function MetaManager() {
+  const { t } = useI18n();
+
+  React.useEffect(() => {
+    // Update Document Title
+    document.title = t.meta.title;
+
+    // Update Meta Description
+    let metaDescription = document.querySelector('meta[name="description"]');
+    if (!metaDescription) {
+      metaDescription = document.createElement('meta');
+      metaDescription.setAttribute('name', 'description');
+      document.head.appendChild(metaDescription);
+    }
+    metaDescription.setAttribute('content', t.meta.description);
+
+    // Update OpenGraph Title
+    let ogTitle = document.querySelector('meta[property="og:title"]');
+    if (ogTitle) ogTitle.setAttribute('content', t.meta.title);
+
+    // Update OpenGraph Description
+    let ogDesc = document.querySelector('meta[property="og:description"]');
+    if (ogDesc) ogDesc.setAttribute('content', t.meta.description);
+
+    // Update Twitter Title
+    let twTitle = document.querySelector('meta[name="twitter:title"]');
+    if (twTitle) twTitle.setAttribute('content', t.meta.title);
+
+    // Update Twitter Description
+    let twDesc = document.querySelector('meta[name="twitter:description"]');
+    if (twDesc) twDesc.setAttribute('content', t.meta.description);
+  }, [t.meta]);
+
+  return null;
+}
 
 function App() {
   return (
     <PrivacyProvider>
       <I18nProvider>
         <HashRouter>
+          <MetaManager />
           <div className="min-h-screen flex flex-col bg-slate-50/50 text-slate-800 antialiased selection:bg-teal-100 selection:text-teal-900 transition-colors duration-300 font-sans">
             <SkipLink />
             <Navbar />

@@ -1,6 +1,10 @@
 import { Dictionary } from "./en";
 
 export const ro: Dictionary = {
+  meta: {
+    title: "HealthCompass – Anonymous Health Risk Checks",
+    description: "Private self-assessments for heart attack, dementia, and more. Multilingual, anonymous, and simple."
+  },
   nav: {
     home: "Acasă",
     about: "Despre",
