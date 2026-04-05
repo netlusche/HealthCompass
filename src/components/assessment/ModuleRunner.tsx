@@ -2,8 +2,8 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import { ModuleDefinition, AssessmentResult } from "@/types/assessment";
-import { useI18n } from "../providers/I18nProvider";
-import Link from "next/link";
+import { useI18n } from "@/components/providers/I18nProvider";
+import { Link } from "react-router-dom";
 import { formatNumber } from "@/utils/numeral";
 
 type Step = "intro" | "assessment" | "results";
@@ -135,7 +135,7 @@ export function ModuleRunner({ moduleDef }: { moduleDef: ModuleDefinition }) {
   if (step === "intro") {
     return (
       <div className="max-w-3xl mx-auto px-4 py-12 md:py-20 animate-in fade-in slide-in-from-bottom-4 duration-500">
-        <Link href="/" className="inline-flex items-center text-sm font-bold text-slate-500 hover:text-slate-800 mb-8 transition-colors">
+        <Link to="/" className="inline-flex items-center text-sm font-bold text-slate-500 hover:text-slate-800 mb-8 transition-colors">
           <svg className={`w-4 h-4 me-1.5 ${locale === "ar" ? "rotate-180" : ""}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
           </svg>
@@ -317,7 +317,7 @@ export function ModuleRunner({ moduleDef }: { moduleDef: ModuleDefinition }) {
                 {t.assessment.restart}
               </button>
               <Link
-                href="/"
+                to="/"
                 className="w-full sm:w-auto px-8 py-4 bg-slate-900 border-2 border-slate-900 text-white font-bold rounded-2xl hover:bg-slate-800 hover:border-slate-800 transition text-center shadow-md shadow-slate-200 focus:outline-none focus-visible:ring-4 focus-visible:ring-slate-400"
               >
                 {t.results.backToHome}

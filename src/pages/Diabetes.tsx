@@ -1,8 +1,4 @@
-"use client";
-
+import React from "react";
 import { ModuleRunner } from "@/components/assessment/ModuleRunner";
 import { diabetesModule } from "@/data/modules/diabetes";
-
-export default function DiabetesPage() {
-  return <ModuleRunner moduleDef={diabetesModule} />;
-}
+export default () => <ModuleRunner moduleDef={diabetesModule} />;

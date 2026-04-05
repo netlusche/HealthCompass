@@ -1,6 +1,5 @@
-"use client";
-
-import Link from "next/link";
+import React from "react";
+import { Link } from "react-router-dom";
 import { useI18n } from "@/components/providers/I18nProvider";
 
 const MODULE_CONFIGS = [
@@ -141,16 +140,14 @@ const MODULE_CONFIGS = [
   }
 ];
 
-export default function Home() {
-  const { t, locale } = useI18n();
+const Home = () => {
+  const { t } = useI18n();
 
   return (
     <div className="flex flex-col flex-grow">
-      
       {/* Hero Section */}
       <section className="relative px-4 pt-6 pb-4 md:pt-8 md:pb-6 overflow-hidden bg-white text-center border-b border-slate-100 z-10 w-full">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-teal-50/50 via-white to-white pointer-events-none opacity-80" />
-        <div className="absolute inset-0 bg-[url('/noise.png')] opacity-[0.015] pointer-events-none mix-blend-overlay" />
         
         <div className="max-w-4xl mx-auto text-center relative z-20">
           <div className="inline-flex items-center gap-2 bg-teal-50 text-teal-700 px-5 py-2.5 rounded-full text-sm font-semibold tracking-wide mb-8 border border-teal-100/50 shadow-sm animate-in fade-in slide-in-from-bottom-2 duration-500 delay-100 ease-out">
@@ -170,12 +167,11 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Modules Selection Area - Scaled to 3 columns on Desktop */}
+      {/* Modules Selection Area */}
       <section className="relative px-4 pt-6 pb-12 md:pt-8 md:pb-16 max-w-7xl mx-auto w-full flex-grow flex flex-col justify-center">
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 relative z-20">
-          
           {MODULE_CONFIGS.map((config) => (
-            <Link key={config.id} href={config.href} className="group block h-full outline-none">
+            <Link key={config.id} to={config.href} className="group block h-full outline-none">
               <div className={`bg-white rounded-[2rem] shadow-sm border border-slate-200/60 p-8 transition-all duration-300 flex flex-col items-start text-start h-full ${config.theme.shadow} hover:-translate-y-1 ${config.theme.border} hover:shadow-xl focus-within:ring-4 focus-within:ring-slate-100`}>
                 <div className={`w-16 h-16 rounded-2xl flex items-center justify-center mb-6 border transition-colors duration-300 ${config.theme.iconBg} ${config.theme.iconText} ${config.theme.iconBorder}`} aria-hidden="true">
                   <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -194,7 +190,6 @@ export default function Home() {
               </div>
             </Link>
           ))}
-
         </div>
 
         <div className="mt-10 md:mt-12 text-center max-w-2xl mx-auto w-full">
@@ -205,7 +200,8 @@ export default function Home() {
           </div>
         </div>
       </section>
-
     </div>
   );
-}
+};
+
+export default Home;

@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import { Link } from "react-router-dom";
 import { useI18n } from "@/components/providers/I18nProvider";
 
 export function Navbar() {
@@ -9,9 +9,9 @@ export function Navbar() {
   return (
     <nav className="border-b border-slate-100 bg-white sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 h-20 md:h-24 flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-3 group focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500 rounded-lg p-1">
+        <Link to="/" className="flex items-center gap-3 group focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500 rounded-lg p-1">
           <img 
-            src="/logo.png" 
+            src="logo.png" 
             alt="HealthCompass Logo" 
             className="w-20 h-20 md:w-28 md:h-28 object-contain transform group-hover:scale-105 transition duration-300"
           />
