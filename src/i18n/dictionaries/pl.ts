@@ -77,6 +77,15 @@ export const pl: Dictionary = {
       copyright: "Copyright"
     }
   },
+  share: {
+    title: "Udostępnij HealthCompass",
+    whatsapp: "WhatsApp",
+    facebook: "Facebook",
+    reddit: "Reddit",
+    telegram: "Telegram",
+    copy: "Kopiuj link",
+    copied: "Skopiowano!"
+  },
   privacy: {
     title: "Ścisła polityka prywatności",
     subtitle: "Twoja prywatność jest naszym priorytetem. HealthCompass to anonimowe narzędzie orientacyjne.",

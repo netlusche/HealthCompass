@@ -1,11 +1,57 @@
+<?php
+/**
+ * HealthCompass - Server-side Meta Tag Injection
+ * Automatically synced from i18n dictionaries.
+ */
+$lang = isset($_GET['lang']) ? $_GET['lang'] : 'en';
+
+$meta_map = [
+    'en' => [
+        'title' => 'HealthCompass – Anonymous Health Risk Checks',
+        'desc'  => 'Private self-assessments for heart attack, dementia, and more. Multilingual, anonymous, and simple.'
+    ],
+    'de' => [
+        'title' => 'HealthCompass – Anonyme Gesundheits-Checks',
+        'desc'  => 'Private Selbsttests für Herzinfarkt, Demenz und mehr. Mehrsprachig, anonym und einfach.'
+    ],
+    'tr' => [
+        'title' => 'HealthCompass – Anonim Sağlık Kontrolleri',
+        'desc'  => 'Kalp krizi, demans ve daha fazlası için özel öz değerlendirmeler. Çok dilli, anonim ve basit.'
+    ],
+    'ru' => [
+        'title' => 'HealthCompass – Анонимные проверки здоровья',
+        'desc'  => 'Частные самооценки риска сердечного приступа, деменции и многого другого. Многоязычно, анонимно и просто.'
+    ],
+    'pl' => [
+        'title' => 'HealthCompass – Anonimowe testy ryzyka zdrowotnego',
+        'desc'  => 'Prywatne testy samooceny ryzyka zawału serca, demencji i inne. Wielojęzyczne, anonimowe i proste.'
+    ],
+    'uk' => [
+        'title' => 'HealthCompass – Анонімна перевірка ризиків для здоров\'я',
+        'desc'  => 'Приватна самоперевірка ризику інфаркту, деменції та іншого. Багатомовна, анонімна та проста.'
+    ],
+    'ro' => [
+        'title' => 'HealthCompass – Verificări anonime ale riscurilor de sănătate',
+        'desc'  => 'Autoevaluări private pentru infarct miocardic, demență și multe altele. Multilingv, anonim și simplu.'
+    ],
+    'ar' => [
+        'title' => 'HealthCompass – فحوصات مجهولة للمخاطر الصحية',
+        'desc'  => 'تقييمات ذاتية خاصة لنوبات القلب، والخرف، وغيرها الكثير. متعدد اللغات، مجهول الهوية، وبسيط.'
+    ]
+];
+
+$m = isset($meta_map[$lang]) ? $meta_map[$lang] : $meta_map['en'];
+$title = htmlspecialchars($m['title']);
+$description = htmlspecialchars($m['desc']);
+?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="<?php echo htmlspecialchars($lang); ?>">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>HealthCompass – Anonymous Health Risk Checks for Prevention</title>
-    <meta name="description" content="Take short, anonymous self-assessments for common health risks such as dementia and heart attack. Get simple scores, prevention tips, and clear guidance — no login required." />
+    <title><?php echo $title; ?></title>
+    <meta name="description" content="<?php echo $description; ?>" />
     
     <!-- Google Fonts: Outfit and IBM Plex Sans Arabic -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,16 +59,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- Meta tags for social sharing -->
-    <meta property="og:title" content="HealthCompass – Anonymous Health Risk Checks" />
-    <meta property="og:description" content="Take short, private self-assessments for heart attack, dementia, and more. Multilingual, anonymous, and simple." />
-    <meta property="og:image" content="https://yourdomain/logo.png" />
+    <meta property="og:title" content="<?php echo $title; ?>" />
+    <meta property="og:description" content="<?php echo $description; ?>" />
+    <meta property="og:image" content="./social.png" />
     <meta property="og:url" content="https://yourdomain/" />
     <meta property="og:type" content="website" />
     
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="HealthCompass – Anonymous Health Risk Checks" />
-    <meta name="twitter:description" content="Take short, private self-assessments for heart attack, dementia, and more." />
-    <meta name="twitter:image" content="https://yourdomain/logo.png" />
+    <meta name="twitter:title" content="<?php echo $title; ?>" />
+    <meta name="twitter:description" content="<?php echo $description; ?>" />
+    <meta name="twitter:image" content="./social.png" />
 
     <!-- Favicons -->
     <link rel="apple-touch-icon" sizes="180x180" href="./logo.png">

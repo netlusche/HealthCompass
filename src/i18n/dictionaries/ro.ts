@@ -77,6 +77,15 @@ export const ro: Dictionary = {
       copyright: "Copyright"
     }
   },
+  share: {
+    title: "Distribuie HealthCompass",
+    whatsapp: "WhatsApp",
+    facebook: "Facebook",
+    reddit: "Reddit",
+    telegram: "Telegram",
+    copy: "Copiază linkul",
+    copied: "Copiat!"
+  },
   privacy: {
     title: "Politică de confidențialitate strictă",
     subtitle: "Confidențialitatea dumneavoastră este prioritatea noastră. HealthCompass este un instrument anonim.",

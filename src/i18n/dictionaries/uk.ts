@@ -77,6 +77,15 @@ export const uk: Dictionary = {
       copyright: "Copyright"
     }
   },
+  share: {
+    title: "Поділитися HealthCompass",
+    whatsapp: "WhatsApp",
+    facebook: "Facebook",
+    reddit: "Reddit",
+    telegram: "Telegram",
+    copy: "Копіювати посилання",
+    copied: "Скопійовано!"
+  },
   privacy: {
     title: "Сувора політика конфіденційності",
     subtitle: "Ваша конфіденційність — наш пріоритет. HealthCompass розроблений як анонімний ознайомлювальний інструмент.",

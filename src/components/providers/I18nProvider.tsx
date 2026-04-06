@@ -26,10 +26,19 @@ export function I18nProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     // Auto-detect language
+    const urlParams = new URLSearchParams(window.location.search);
+    const urlLang = urlParams.get('lang');
     const browserLang = navigator.language.split("-")[0];
     const savedLang = localStorage.getItem("hc_lang");
     
-    if (["en", "de", "tr", "ru", "pl", "uk", "ro", "ar"].includes(savedLang || "")) {
+    const validLocales = ["en", "de", "tr", "ru", "pl", "uk", "ro", "ar"];
+
+    if (validLocales.includes(urlLang || "")) {
+      // URL parameter takes top priority (e.g. for shared links)
+      setLocaleState(urlLang as Locale);
+      // Optional: Update localStorage to keep the preference
+      localStorage.setItem("hc_lang", urlLang!);
+    } else if (validLocales.includes(savedLang || "")) {
       setLocaleState(savedLang as Locale);
     } else if (browserLang === "de") {
       setLocaleState("de");

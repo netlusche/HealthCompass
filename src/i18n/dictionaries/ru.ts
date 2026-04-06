@@ -77,6 +77,15 @@ export const ru: Dictionary = {
       copyright: "Copyright"
     }
   },
+  share: {
+    title: "Поделиться HealthCompass",
+    whatsapp: "WhatsApp",
+    facebook: "Facebook",
+    reddit: "Reddit",
+    telegram: "Telegram",
+    copy: "Копировать ссылку",
+    copied: "Скопировано!"
+  },
   privacy: {
     title: "Строгая политика конфиденциальности",
     subtitle: "Ваша конфиденциальность — наш приоритет. HealthCompass разработан как анонимный ознакомительный инструмент.",

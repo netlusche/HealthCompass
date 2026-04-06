@@ -2,6 +2,7 @@
 
 import { Link } from "react-router-dom";
 import { useI18n } from "@/components/providers/I18nProvider";
+import { ShareBar } from "@/components/common/ShareBar";
 
 export function Footer() {
   const { t } = useI18n();
@@ -9,6 +10,7 @@ export function Footer() {
   return (
     <footer className="mt-auto py-10 border-t border-gray-100 bg-slate-50">
       <div className="max-w-5xl mx-auto px-4 text-center">
+        <ShareBar />
         <div className="text-slate-800 font-semibold mb-2">HealthCompass</div>
         <div className="text-slate-600 text-sm mb-6">{t.footer.tagline}</div>
         <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm text-slate-500">

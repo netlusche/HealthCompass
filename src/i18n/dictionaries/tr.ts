@@ -77,6 +77,15 @@ export const tr: Dictionary = {
       copyright: "Copyright"
     }
   },
+  share: {
+    title: "HealthCompass'ı Paylaş",
+    whatsapp: "WhatsApp",
+    facebook: "Facebook",
+    reddit: "Reddit",
+    telegram: "Telegram",
+    copy: "Bağlantıyı Kopyala",
+    copied: "Kopyalandı!"
+  },
   privacy: {
     title: "Katı Gizlilik Politikası",
     subtitle: "Gizliliğiniz önceliğimizdir. HealthCompass anonim bir yönlendirme aracı olarak tasarlanmıştır.",

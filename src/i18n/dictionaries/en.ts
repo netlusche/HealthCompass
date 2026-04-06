@@ -75,6 +75,15 @@ export const en = {
       copyright: "Copyright"
     }
   },
+  share: {
+    title: "Share HealthCompass",
+    whatsapp: "WhatsApp",
+    facebook: "Facebook",
+    reddit: "Reddit",
+    telegram: "Telegram",
+    copy: "Copy Link",
+    copied: "Copied!"
+  },
   privacy: {
     title: "Strict Privacy Policy",
     subtitle: "Your privacy is our priority. HealthCompass is designed to be an anonymous orientation tool.",
