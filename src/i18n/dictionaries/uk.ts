@@ -2,8 +2,8 @@ import { Dictionary } from "./en";
 
 export const uk: Dictionary = {
   meta: {
-    title: "HealthCompass – Anonymous Health Risk Checks",
-    description: "Private self-assessments for heart attack, dementia, and more. Multilingual, anonymous, and simple."
+    title: "HealthCompass – Анонімна перевірка ризиків для здоров'я",
+    description: "Приватна самоперевірка ризику інфаркту, деменції та іншого. Багатомовна, анонімна та проста."
   },
   nav: {
     home: "Головна",

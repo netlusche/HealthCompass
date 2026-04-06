@@ -26,11 +26,13 @@ import Privacy from './pages/Privacy';
 import { useI18n } from './components/providers/I18nProvider';
 
 function MetaManager() {
-  const { t } = useI18n();
+  const { t, locale } = useI18n();
 
   React.useEffect(() => {
     // Update Document Title
-    document.title = t.meta.title;
+    if (t.meta?.title) {
+      document.title = t.meta.title;
+    }
 
     // Update Meta Description
     let metaDescription = document.querySelector('meta[name="description"]');
@@ -39,24 +41,26 @@ function MetaManager() {
       metaDescription.setAttribute('name', 'description');
       document.head.appendChild(metaDescription);
     }
-    metaDescription.setAttribute('content', t.meta.description);
+    if (t.meta?.description) {
+      metaDescription.setAttribute('content', t.meta.description);
+    }
 
     // Update OpenGraph Title
     let ogTitle = document.querySelector('meta[property="og:title"]');
-    if (ogTitle) ogTitle.setAttribute('content', t.meta.title);
+    if (ogTitle && t.meta?.title) ogTitle.setAttribute('content', t.meta.title);
 
     // Update OpenGraph Description
     let ogDesc = document.querySelector('meta[property="og:description"]');
-    if (ogDesc) ogDesc.setAttribute('content', t.meta.description);
+    if (ogDesc && t.meta?.description) ogDesc.setAttribute('content', t.meta.description);
 
     // Update Twitter Title
     let twTitle = document.querySelector('meta[name="twitter:title"]');
-    if (twTitle) twTitle.setAttribute('content', t.meta.title);
+    if (twTitle && t.meta?.title) twTitle.setAttribute('content', t.meta.title);
 
     // Update Twitter Description
     let twDesc = document.querySelector('meta[name="twitter:description"]');
-    if (twDesc) twDesc.setAttribute('content', t.meta.description);
-  }, [t.meta]);
+    if (twDesc && t.meta?.description) twDesc.setAttribute('content', t.meta.description);
+  }, [t, locale]);
 
   return null;
 }
