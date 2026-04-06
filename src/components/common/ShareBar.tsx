@@ -86,7 +86,7 @@ export function ShareBar() {
   };
 
   return (
-    <div className="flex flex-col items-center gap-4 py-8 px-4">
+    <div className="flex flex-col items-center gap-4 pt-2 pb-4 px-4">
       <h3 className="text-xs font-bold text-slate-400 uppercase tracking-[0.2em] mb-1">
         {t.share.title}
       </h3>

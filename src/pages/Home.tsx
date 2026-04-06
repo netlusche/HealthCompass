@@ -168,7 +168,7 @@ const Home = () => {
       </section>
 
       {/* Modules Selection Area */}
-      <section className="relative px-4 pt-6 pb-12 md:pt-8 md:pb-16 max-w-7xl mx-auto w-full flex-grow flex flex-col justify-center">
+      <section className="relative px-4 pt-6 pb-0 md:pt-8 max-w-7xl mx-auto w-full flex-grow flex flex-col justify-center">
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 relative z-20">
           {MODULE_CONFIGS.map((config) => (
             <Link key={config.id} to={config.href} className="group block h-full outline-none">
@@ -192,7 +192,7 @@ const Home = () => {
           ))}
         </div>
 
-        <div className="mt-10 md:mt-12 text-center max-w-2xl mx-auto w-full">
+        <div className="mt-4 md:mt-6 text-center max-w-2xl mx-auto w-full">
           <div className="bg-slate-100/50 px-6 py-4 rounded-xl border border-slate-200/50">
             <p className="text-sm text-slate-600 leading-relaxed font-medium">
               {t.home.disclaimerNote}

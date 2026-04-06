@@ -8,7 +8,7 @@ export function Footer() {
   const { t } = useI18n();
 
   return (
-    <footer className="mt-auto py-10 border-t border-gray-100 bg-slate-50">
+    <footer className="mt-auto pt-0 pb-6 border-t border-gray-100 bg-slate-50">
       <div className="max-w-5xl mx-auto px-4 text-center">
         <ShareBar />
         <div className="text-slate-800 font-semibold mb-2">HealthCompass</div>
