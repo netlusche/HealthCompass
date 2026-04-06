@@ -74,3 +74,79 @@
 .zoom-in-95 {
   animation-name: zoom-in;
 }
+
+/* Print Styles */
+@media print {
+  .no-print,
+  nav,
+  footer,
+  aside,
+  .share-bar,
+  button,
+  .back-to-home {
+    display: none !important;
+  }
+
+  body {
+    background: white !important;
+    color: black !important;
+    font-size: 12pt;
+    line-height: 1.5;
+  }
+
+  .max-w-3xl, .max-w-2xl {
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .bg-white, .bg-slate-50, .bg-teal-50, .bg-emerald-50, .bg-amber-50, .bg-rose-50 {
+    background-color: transparent !important;
+    border-color: #eee !important;
+    box-shadow: none !important;
+  }
+
+  .shadow-xl, .shadow-lg, .shadow-md, .shadow-sm {
+    box-shadow: none !important;
+  }
+
+  .border, .border-2 {
+    border: 1px solid #ddd !important;
+  }
+
+  h1, h2, h3, h4 {
+    color: black !important;
+    page-break-after: avoid;
+  }
+
+  p, li {
+    page-break-inside: avoid;
+  }
+
+  /* RTL Support for Arabic in Print */
+  [dir="rtl"] {
+    text-align: right;
+  }
+
+  /* Ensure the printed output looks like a medical report */
+  .results-header {
+    border-bottom: 2px solid black !important;
+    margin-bottom: 2rem !important;
+    padding-bottom: 1rem !important;
+  }
+
+  textarea {
+    border: 1px solid #ccc !important;
+    min-height: 150px !important;
+    display: block !important;
+    width: 100% !important;
+  }
+
+  .print-only {
+    display: block !important;
+  }
+}
+
+.print-only {
+  display: none;
+}

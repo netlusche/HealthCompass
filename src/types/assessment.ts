@@ -34,6 +34,31 @@ export interface Question {
   helperAr?: string;
   optional?: boolean;
   options: Option[];
+  isModifiable?: boolean;
+  preventionActionEn?: string;
+  preventionActionDe?: string;
+  preventionActionTr?: string;
+  preventionActionRu?: string;
+  preventionActionPl?: string;
+  preventionActionUk?: string;
+  preventionActionRo?: string;
+  preventionActionAr?: string;
+  preventionContextEn?: string;
+  preventionContextDe?: string;
+  preventionContextTr?: string;
+  preventionContextRu?: string;
+  preventionContextPl?: string;
+  preventionContextUk?: string;
+  preventionContextRo?: string;
+  preventionContextAr?: string;
+  doctorPromptEn?: string;
+  doctorPromptDe?: string;
+  doctorPromptTr?: string;
+  doctorPromptRu?: string;
+  doctorPromptPl?: string;
+  doctorPromptUk?: string;
+  doctorPromptRo?: string;
+  doctorPromptAr?: string;
 }
 
 export interface ModuleDefinition {
@@ -123,4 +148,9 @@ export interface AssessmentResult {
   topFactorsUk: string[];
   topFactorsRo: string[];
   topFactorsAr: string[];
+  preventionPlan?: {
+    modifiable: { label: string; points: number }[];
+    nonModifiable: { label: string; points: number }[];
+  };
+  doctorPrep?: string[];
 }

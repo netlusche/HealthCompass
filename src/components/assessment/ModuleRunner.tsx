@@ -14,6 +14,7 @@ export function ModuleRunner({ moduleDef }: { moduleDef: ModuleDefinition }) {
   const [currentQuestionIdx, setCurrentQuestionIdx] = useState(0);
   const [answers, setAnswers] = useState<Record<string, string>>({});
   const [result, setResult] = useState<AssessmentResult | null>(null);
+  const [doctorNotes, setDoctorNotes] = useState("");
   
   const questionHeadingRef = useRef<HTMLHeadingElement>(null);
 
@@ -40,6 +41,7 @@ export function ModuleRunner({ moduleDef }: { moduleDef: ModuleDefinition }) {
     setAnswers({});
     setCurrentQuestionIdx(0);
     setResult(null);
+    setDoctorNotes("");
     setStep("assessment");
   };
 
@@ -105,7 +107,48 @@ export function ModuleRunner({ moduleDef }: { moduleDef: ModuleDefinition }) {
       topFactorsUk: answeredFactorsUk.slice(0, 4).map(f => f.label),
       topFactorsRo: answeredFactorsRo.slice(0, 4).map(f => f.label),
       topFactorsAr: answeredFactorsAr.slice(0, 4).map(f => f.label),
+      preventionPlan: generatePreventionPlan(),
+      doctorPrep: generateDoctorPrep(),
     };
+  };
+
+  const generatePreventionPlan = () => {
+    const modifiable: { label: string; points: number }[] = [];
+    const nonModifiable: { label: string; points: number }[] = [];
+
+    moduleDef.questions.forEach(q => {
+      const ansId = answers[q.id];
+      if (!ansId) return;
+      const option = q.options.find(o => o.id === ansId);
+      if (!option || option.points <= 0) return;
+
+      if (q.isModifiable) {
+        const action = getLocalized(q, "preventionAction");
+        if (action) modifiable.push({ label: action, points: option.points });
+      } else {
+        const context = getLocalized(q, "preventionContext");
+        if (context) nonModifiable.push({ label: context, points: option.points });
+      }
+    });
+
+    return {
+      modifiable: modifiable.sort((a, b) => b.points - a.points),
+      nonModifiable: nonModifiable.sort((a, b) => b.points - a.points),
+    };
+  };
+
+  const generateDoctorPrep = () => {
+    const prompts: string[] = [];
+    moduleDef.questions.forEach(q => {
+      const ansId = answers[q.id];
+      if (!ansId) return;
+      const option = q.options.find(o => o.id === ansId);
+      if (!option || option.points <= 0) return;
+
+      const prompt = getLocalized(q, "doctorPrompt");
+      if (prompt) prompts.push(prompt);
+    });
+    return prompts;
   };
 
   const handleAnswer = (optionId: string) => {
@@ -130,6 +173,10 @@ export function ModuleRunner({ moduleDef }: { moduleDef: ModuleDefinition }) {
     } else {
       setStep("intro");
     }
+  };
+
+  const handlePrint = () => {
+    window.print();
   };
 
   if (step === "intro") {
@@ -192,6 +239,10 @@ export function ModuleRunner({ moduleDef }: { moduleDef: ModuleDefinition }) {
           <div className="w-full bg-slate-200 rounded-full h-2 overflow-hidden">
             <div className="bg-teal-600 h-2 rounded-full transition-all duration-500 ease-out" style={{ width: `${progress}%` }}></div>
           </div>
+        </div>
+
+        <div className="px-2 mb-6 text-center">
+          <h1 className="text-sm font-bold text-slate-400 uppercase tracking-widest">{title}</h1>
         </div>
 
         <fieldset className="bg-white p-8 md:p-12 rounded-[2rem] shadow-xl shadow-slate-100 border border-slate-200/60 animate-in fade-in slide-in-from-right-4 duration-300 relative" aria-live="polite">
@@ -259,7 +310,11 @@ export function ModuleRunner({ moduleDef }: { moduleDef: ModuleDefinition }) {
       <div className="max-w-3xl mx-auto px-4 py-8 md:py-16 animate-in zoom-in-95 duration-500">
         <div className="bg-white rounded-[2rem] shadow-xl shadow-slate-100 border border-slate-200/60 overflow-hidden">
           
-          <div className={`p-10 md:p-14 border-b text-center ${riskColors[result.category].split(" ")[0]} border-opacity-50 relative`} aria-live="assertive">
+          <div className="pt-10 pb-2 px-10 text-center border-b border-slate-50">
+            <h1 className="text-sm font-bold text-slate-400 uppercase tracking-widest">{title}</h1>
+          </div>
+
+          <div className={`p-10 md:p-14 border-b text-center ${riskColors[result.category].split(" ")[0]} border-opacity-50 relative results-header`} aria-live="assertive">
             <div className="text-xs font-bold uppercase tracking-widest opacity-60 mb-6">
               {t.results.riskCategory}
             </div>
@@ -309,7 +364,90 @@ export function ModuleRunner({ moduleDef }: { moduleDef: ModuleDefinition }) {
               ))}
             </ul>
 
-            <div className="border-t border-slate-100 pt-10 flex flex-col sm:flex-row gap-4 items-center justify-center">
+            {/* v0.2.0: Personal Prevention Plan */}
+            {result.preventionPlan && (result.preventionPlan.modifiable.length > 0 || result.preventionPlan.nonModifiable.length > 0) && (
+              <div className="border-t border-slate-100 pt-10 mb-10">
+                <h3 className="text-2xl font-bold text-slate-900 mb-6">{t.results.preventionPlanTitle}</h3>
+                
+                {result.preventionPlan.modifiable.length > 0 && (
+                  <div className="mb-8">
+                    <h4 className="text-sm font-bold text-teal-700 uppercase tracking-wider mb-4">{t.results.preventionPlanInfluencable}</h4>
+                    <ul className="space-y-3">
+                      {result.preventionPlan.modifiable.map((item, i) => (
+                        <li key={i} className="flex items-start p-4 bg-white border border-slate-200 rounded-xl shadow-sm">
+                          <div className="w-2 h-2 rounded-full bg-teal-500 mt-2 me-4 flex-shrink-0"></div>
+                          <span className="text-slate-700 font-medium">{item.label}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+
+                {result.preventionPlan.nonModifiable.length > 0 && (
+                  <div>
+                    <h4 className="text-sm font-bold text-slate-500 uppercase tracking-wider mb-4">{t.results.preventionPlanFixed}</h4>
+                    <ul className="space-y-2">
+                      {result.preventionPlan.nonModifiable.map((item, i) => (
+                        <li key={i} className="flex items-start text-sm text-slate-600 bg-slate-50 p-3 rounded-lg border border-slate-100">
+                          <svg className="w-4 h-4 me-3 mt-0.5 text-slate-400 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                          </svg>
+                          {item.label}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+              </div>
+            )}
+
+            {/* v0.2.0: Doctor visit preparation tool */}
+            <div className="border-t border-slate-100 pt-10 mb-10">
+              <h3 className="text-2xl font-bold text-slate-900 mb-4">{t.results.doctorPrepTitle}</h3>
+              <p className="text-slate-600 mb-6 leading-relaxed font-light no-print">{t.results.doctorPrepIntro}</p>
+              
+              {result.doctorPrep && result.doctorPrep.length > 0 && (
+                <div className="mb-8 space-y-3">
+                  {result.doctorPrep.map((prompt, i) => (
+                    <div key={i} className="flex items-start p-5 bg-slate-50 border border-slate-100 rounded-2xl relative overflow-hidden group">
+                      <div className="absolute inset-y-0 start-0 w-1 bg-slate-300"></div>
+                      <p className="text-slate-800 font-medium leading-relaxed">{prompt}</p>
+                    </div>
+                  ))}
+                </div>
+              )}
+
+              <div className="space-y-3">
+                <label htmlFor="doctor-notes" className="text-sm font-bold text-slate-700 ps-1">{t.results.doctorPrepNotes}</label>
+                <textarea 
+                  id="doctor-notes"
+                  rows={4}
+                  value={doctorNotes}
+                  onChange={(e) => setDoctorNotes(e.target.value)}
+                  className="w-full p-6 rounded-[1.5rem] bg-white border border-slate-200 focus:border-teal-500 focus:ring-4 focus:ring-teal-100 transition-all font-medium text-slate-800 shadow-sm no-print"
+                  placeholder="..."
+                ></textarea>
+                {/* Print-only version of the notes */}
+                <div className="print-only whitespace-pre-wrap p-6 border border-slate-200 rounded-2xl bg-white min-h-32 text-slate-800 font-medium">
+                  {doctorNotes || "..."}
+                </div>
+              </div>
+            </div>
+
+            {/* Print action */}
+            <div className="mb-10 no-print">
+               <button 
+                onClick={handlePrint}
+                className="w-full inline-flex justify-center items-center py-5 px-8 bg-white border-2 border-slate-200 text-slate-800 rounded-2xl font-bold text-lg hover:bg-slate-50 hover:border-slate-300 transition-all shadow-sm group"
+              >
+                <svg className="w-5 h-5 me-3 text-slate-500 group-hover:text-slate-800 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" />
+                </svg>
+                {t.results.printAction}
+              </button>
+            </div>
+
+            <div className="border-t border-slate-100 pt-10 flex flex-col sm:flex-row gap-4 items-center justify-center no-print">
               <button 
                 onClick={handleStart}
                 className="w-full sm:w-auto px-8 py-4 border-2 border-slate-200 text-slate-700 font-bold rounded-2xl hover:bg-slate-50 hover:border-slate-300 transition focus:outline-none focus-visible:ring-4 focus-visible:ring-slate-300"
